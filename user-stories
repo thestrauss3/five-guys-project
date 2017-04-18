@@ -22,3 +22,12 @@ For people who are logged in:
   As a burger enthusiast, I want to log in and see reviews I've submitted.
 
   As a burger enthusiast, I want to be able to add a burger not listed on the website.
+
+  I want to be able to upvote or downvote a review
+
+
+
+As an admin:
+  I want to be able to remove reviews with inappropriate content
+
+  I want to be able to remove burgers with inappropriate content
