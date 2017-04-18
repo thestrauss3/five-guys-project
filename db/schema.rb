@@ -10,16 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170418195859) do
-=======
+
 ActiveRecord::Schema.define(version: 20170418195617) do
->>>>>>> edd3e5eff22ebeda4c0420a9ad62f34b3cb00a59
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "burgers", force: :cascade do |t|
     t.string   "name",            null: false
     t.text     "description",     null: false
@@ -28,7 +24,8 @@ ActiveRecord::Schema.define(version: 20170418195617) do
     t.string   "image_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-=======
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string   "name",        null: false
     t.string   "location",    null: false
@@ -37,7 +34,6 @@ ActiveRecord::Schema.define(version: 20170418195617) do
     t.string   "hours",       null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
->>>>>>> edd3e5eff22ebeda4c0420a9ad62f34b3cb00a59
   end
 
 end
