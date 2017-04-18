@@ -1,0 +1,24 @@
+User Stories
+
+For any user:
+
+  As a burger enthusiast, I want to see a list of the top 10 burgers when I visit the homepage
+
+  As a burger enthusiast, when I click on a specific burger, I want to see all the details about that burger as well as the reviews
+
+  More advanced features:
+
+    As a burger enthusiast, I want to be able to search for a burger by ingredients, size, price or other attributes.
+
+
+
+
+For people who are logged in:
+
+  As a burger enthusiast, I want to sign in to access a list of burgers I've tried, a list of burgers I'd like to try
+
+  As a burger enthusiast, I want to sign in to add a review to a burger I've tried.
+
+  As a burger enthusiast, I want to log in and see reviews I've submitted.
+
+  As a burger enthusiast, I want to be able to add a burger not listed on the website.
