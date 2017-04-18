@@ -1,8 +1,9 @@
-require "rails-helper"
+require "rails_helper"
 
 feature "user visits a specific restaurant" do
   scenario "user can click on the name of a restaurant to go to its page" do
-    restaurant1 = Restaurant.create(name: "Five guys", location: "Boston", dining_type: "Might be a selction", description: "Really awesome food", hours: "some time stamps")
+    restaurant1 = Restaurant.create(name: "Five guys", location: "Boston", dining_type: "Might be a selction", description: "Really awesome food", hours: "9am-9pm")
+    visit restaurants_path
     click_link restaurant1.name
 
     expect(page).to have_content(restaurant1.name)

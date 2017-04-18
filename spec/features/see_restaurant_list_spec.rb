@@ -1,8 +1,8 @@
-require "rails-helper"
+require "rails_helper"
 
 feature "sees restaurants do" do
   scenario "user visits index of page of restaurants" do
-    restaurant1 = Restaurant.create(name: "Five guys", location: "Boston", dining_type: "Might be a selction", description: "Really awesome food", hours: "some time stamps")
+    restaurant1 = Restaurant.create(name: "Five guys", location: "Boston", dining_type: "Might be a selction", description: "Really awesome food", hours: "9am-9pm")
     restaurant2 = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Fast Food", description: "square burgers", hours: "24/7")
 
     visit restaurants_path
