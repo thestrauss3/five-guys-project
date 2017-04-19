@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>925_guys</title>
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
   <header>
-    Sign in
+    <div class="links">
+      <%= link_to "Restaurants", restaurants_path %>
+      <%= link_to "Burgers", burgers_path %>
+      Sign in
+    </div>
+
   </header>
   <body>
     <div id="app">
-      <div class="links">
-        <%= link_to "Restaurants", restaurants_path %>
-        <%= link_to "Burgers", burgers_path %>
-      </div>
 
       <div>
         <% flash.each do |kind, message| %>
