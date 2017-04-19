@@ -42,16 +42,25 @@ end
 
 feature "User views a specific burger page" do
   scenario "User should see things about the Burger" do
-    wendys = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Might be a selction", description: "Really long lines and long text too", hours: "10am-10pm")
+    wendys = Restaurant.create(
+      name: "Wendys",
+      location: "Boston",
+      dining_type: "Might be a selction", description: "Really long lines and long text too", hours: "10am-10pm")
+
     baconator = Burger.create name: "Baconator", description: "Lots of bacon", price: "$5", restaurant: wendys, image_url: "baconator.jpg"
+
     visit burger_path(baconator)
+
     expect(page).to have_content "Baconator"
-    expect(page).to have_css("img[src*='baconator.jpg']")
-    expect(page).to have_xpath("//img[contains(@src, 'baconator.jpg')]")
+    expect(page).to have_css("img[src*='baconator']")
+
   end
+
   scenario "If there is no image, there is no image shown" do
     wendys = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Might be a selction", description: "Really long lines", hours: "10am-10pm")
+
     baconator = Burger.create name: "Baconator", description: "Lots of bacon", price: "$5", restaurant: wendys
+
     expect(page).to_not have_xpath("//img")
   end
 end
