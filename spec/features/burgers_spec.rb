@@ -35,3 +35,12 @@ feature "User views a burger index page" do
     # expect(page).to_not have_content "baconator"
   # end
 end
+
+feature "User views a specific burger page" do
+  scenario "User should see things about the Burger" do
+    baconator = Burger.create name: "Baconator", description: "Lots of bacon", price: "$5", restaurant_name: "Wendys", image_url: "baconator.jpg"
+    visit burger_path(baconator)
+    expect(page).to have_content "Baconator"
+    expect(page).to have_xpath("//img[contains(@src, 'baconator.jpg')]")
+  end
+end

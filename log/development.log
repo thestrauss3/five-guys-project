@@ -776,3 +776,76 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+Started GET "/burgers" for ::1 at 2017-04-19 10:43:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BurgersController#index as HTML
+  Rendering burgers/index.html.erb within layouts/application
+  [1m[36mBurger Load (0.6ms)[0m  [1m[34mSELECT "burgers".* FROM "burgers"[0m
+  Rendered burgers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 186ms (Views: 180.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/restaurants" for ::1 at 2017-04-19 10:43:06 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/burgers" for ::1 at 2017-04-19 10:43:07 -0400
+Processing by BurgersController#index as HTML
+  Rendering burgers/index.html.erb within layouts/application
+  [1m[36mBurger Load (0.4ms)[0m  [1m[34mSELECT "burgers".* FROM "burgers"[0m
+  Rendered burgers/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.9ms)[0m  [1m[32mINSERT INTO "burgers" ("name", "description", "restaurant_name", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Baconator"], ["description", "Lots of bacon"], ["restaurant_name", "Wendys"], ["price", "$5"], ["image_url", "baconator.jpg"], ["created_at", 2017-04-19 15:25:52 UTC], ["updated_at", 2017-04-19 15:25:52 UTC]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/burgers" for ::1 at 2017-04-19 11:26:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BurgersController#index as HTML
+  Rendering burgers/index.html.erb within layouts/application
+  [1m[36mBurger Load (0.7ms)[0m  [1m[34mSELECT "burgers".* FROM "burgers"[0m
+  Rendered burgers/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 290ms (Views: 278.9ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/burgers" for ::1 at 2017-04-19 11:26:07 -0400
+Processing by BurgersController#index as HTML
+  Rendering burgers/index.html.erb within layouts/application
+  [1m[36mBurger Load (0.5ms)[0m  [1m[34mSELECT "burgers".* FROM "burgers"[0m
+  Rendered burgers/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/burgers/1" for ::1 at 2017-04-19 11:26:09 -0400
+Processing by BurgersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBurger Load (0.3ms)[0m  [1m[34mSELECT  "burgers".* FROM "burgers" WHERE "burgers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering burgers/show.html.erb within layouts/application
+  Rendered burgers/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/burgers/1" for ::1 at 2017-04-19 11:29:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BurgersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBurger Load (0.4ms)[0m  [1m[34mSELECT  "burgers".* FROM "burgers" WHERE "burgers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering burgers/show.html.erb within layouts/application
+  Rendered burgers/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 226ms (Views: 204.3ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/burgers/1" for ::1 at 2017-04-19 11:29:20 -0400
+Processing by BurgersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBurger Load (1.1ms)[0m  [1m[34mSELECT  "burgers".* FROM "burgers" WHERE "burgers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering burgers/show.html.erb within layouts/application
+  Rendered burgers/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 1.1ms)
+
+
