@@ -2,3 +2,4 @@
   <% @restaurants.each do |restaurant| %>
     <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
   <% end %>
+<span><%= link_to "Back to Home", root_path %></span>
