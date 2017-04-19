@@ -24,11 +24,18 @@ feature "visits restaurant index page do" do
       expect(page).to have_content "Wendys"
 
 
-    # expect(page).to have_content("Name")
-    # expect(page).to have_content("Location")
-    # expect(page).to have_content("Dining Type")
-    # expect(page).to have_content("Description")
-    # expect(page).to have_content("Hours")
+
+  end
+
+  scenario "user trys to submit an incomplete form" do
+    visit new_restaurant_path
+    click_button "Add Restaurant"
+
+    expect(page).to have_content "Name can't be blank"
+    expect(page).to have_content "Location can't be blank"
+    expect(page).to have_content "Description can't be blank"
+    expect(page).to have_content "Description is too short (minimum is 20 characters)"
+
 
   end
 end

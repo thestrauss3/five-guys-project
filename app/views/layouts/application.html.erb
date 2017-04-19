@@ -16,6 +16,12 @@
         <%= link_to "Restaurants", restaurants_path %>
         <%= link_to "Burgers", burgers_path %>
       </div>
+
+      <div>
+        <% flash.each do |kind, message| %>
+          <p><%= message %></p>
+        <% end %>
+      <div>
       <%= yield %>
     </div>
   </body>
