@@ -6,7 +6,7 @@ feature "visits restaurant index page do" do
     visit restaurants_path
     expect(page).to have_content("Restaurant not on our list? Add one to the list!")
 
-    click_button "Add a Restaurant"
+    click_link "Add a Restaurant"
     expect(page).to have_content("Restaurant Form")
   end
 
@@ -18,7 +18,7 @@ feature "visits restaurant index page do" do
       fill_in 'Description', with: "Make sure you grab the frosty with the burger"
       fill_in 'Hours', with: "9AM-10PM"
 
-      click_button "Submit"
+      click_button "Add Restaurant"
 
       expect(page).to have_content "Restaurant added successfully"
       expect(page).to have_content "Wendys"
