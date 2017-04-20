@@ -1,0 +1,24 @@
+<h1>Add a burger</h1>
+<%= form_for [@restaurant, @burger] do |f| %>
+  <div class="field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %><br/>
+    <%= f.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image_url, "Enter the URL for an image of this burger" %><br/>
+    <%= f.text_area :image_url %>
+  </div>
+
+  <%= f.submit "Add Burger" %>
+<% end %>

@@ -1,3 +1,4 @@
 class Burger < ApplicationRecord
-  validates :name, :description, :restaurant_name, presence: true
+  validates :name, :description, presence: true
+  belongs_to :restaurant
 end

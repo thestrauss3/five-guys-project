@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :restaurants, only: [:new, :index, :create, :show, :destroy, :edit]
+  resources :restaurants, except: [:edit, :update, :destroy] do
+    resources :burgers, only: [:index, :new, :create]
+  end
+  resources :burgers, only: [:index, :show]
   root 'static_pages#index'
-  resources :burgers, only: [:index, :show, :new, :create]
 end
