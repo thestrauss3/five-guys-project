@@ -1,1 +1,14 @@
-index review
+<h1 class="title">Review for <%= @burger.name %></h1>
+
+  <% @reviews.each do |r| %>
+  <ul class=review_tile>
+    <li class="review_username">Reviewed by: USER NAME</li>
+
+    <li class="burger_rating">Burger rating: <%= r.burger_rating %> stars</li>
+
+    <li class="review_rating">Review score: <%= r.review_rating %></li>
+    <br/>
+    <li class="review_body"><%= r.body %></li>
+
+  </ul>
+  <% end %>
