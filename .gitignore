@@ -16,10 +16,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore coveralls
 /coverage
-
 .env
-
-#Ignore npm install
 /node_modules
