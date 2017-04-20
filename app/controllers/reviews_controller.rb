@@ -1,20 +1,21 @@
 class ReviewsController < ApplicationController
   def index
+    @burger = Burger.find(params[:burger_id])
+    @reviews = @burger.reviews
   end
-  def show
-    @review = Review.find(params[:id])
-  end
+
   def new
     @burger = Burger.find(params[:burger_id])
     @review = Review.new
   end
+
   def create
     @burger = Burger.find(params[:burger_id])
     @review = Review.new(review_params)
     @review.burger = @burger
     if @review.save
       flash[:notice] = "Review submitted successfully!"
-      redirect_to review_path(@review)
+      redirect_to burger_path(@burger)
     else
       flash[:error] = @review.errors.full_messages.join(". \n")
       render :new
