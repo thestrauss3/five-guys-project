@@ -1,5 +1,5 @@
 body {
-  background-image: url('burger-wallpaper.jpg');
+  background-image: image-url('burger-wallpaper.jpg');
   background-color: #f0f0f0;
   background-blend-mode: screen;
 }
@@ -11,5 +11,9 @@ header {
 }
 
 .links:hover {
-  cursor: url('cursorburger.png'), default;
+  cursor: image-url('cursorburger.png'), default;
+}
+
+.login {
+  text-align: right;
 }
