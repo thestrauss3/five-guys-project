@@ -12,19 +12,15 @@ feature "visits restaurant index page do" do
 
   scenario "user visits on restaurant form page" do
     visit new_restaurant_path
-      fill_in 'Name', with: "Wendys"
-      fill_in 'Location', with: "Boston"
-      fill_in 'Dining Type', with: "Fast Food"
-      fill_in 'Description', with: "Make sure you grab the frosty with the burger"
-      fill_in 'Hours', with: "9AM-10PM"
+    fill_in 'Name', with: "Wendys"
+    fill_in 'Location', with: "Boston"
+    fill_in 'Dining Type', with: "Fast Food"
+    fill_in 'Description', with: "Make sure you grab the frosty with the burger"
+    fill_in 'Hours', with: "9AM-10PM"
+    click_button "Add Restaurant"
 
-      click_button "Add Restaurant"
-
-      expect(page).to have_content "Restaurant added successfully"
-      expect(page).to have_content "Wendys"
-
-
-
+    expect(page).to have_content "Restaurant added successfully"
+    expect(page).to have_content "Wendys"
   end
 
   scenario "user trys to submit an incomplete form" do
@@ -35,7 +31,5 @@ feature "visits restaurant index page do" do
     expect(page).to have_content "Location can't be blank"
     expect(page).to have_content "Description can't be blank"
     expect(page).to have_content "Description is too short (minimum is 20 characters)"
-
-
   end
 end

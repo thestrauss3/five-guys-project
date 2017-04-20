@@ -4,3 +4,9 @@
 <h3><%= @restaurant.description %></h3>
 <h3><%= @restaurant.dining_type %></h3>
 <h3><%= @restaurant.hours %></h3>
+<h3>
+  <% @restaurant.burgers.each do |b| %>
+    <li><%= link_to b.name, burger_path(b) %></li>
+  <% end %>
+</h3>
+<h3><%= link_to "Add a new burger to this restaurant", new_restaurant_burger_path(@restaurant) %></h3>
