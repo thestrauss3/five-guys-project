@@ -9,8 +9,9 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
   def create
+    @burger = Burger.find(params[:burger_id])
     @review = Review.new(review_params)
-    @review.burger = Burger.find(params[:burger_id])
+    @review.burger = @burger
     if @review.save
       flash[:notice] = "Review submitted successfully!"
       redirect_to review_path(@review)

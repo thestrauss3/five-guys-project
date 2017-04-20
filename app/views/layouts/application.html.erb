@@ -15,6 +15,11 @@
   </header>
   <body>
     <div id="app">
+      <div>
+        <% flash.each do |kind, message| %>
+          <p><%= message %></p>
+        <% end %>
+      <div>
       <%= yield %>
     </div>
   </body>

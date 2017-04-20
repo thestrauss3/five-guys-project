@@ -5,6 +5,7 @@ class BurgersController < ApplicationController
 
   def show
     @burger = Burger.find(params[:id])
+    @reviews = @burger.reviews
   end
 
   def new
