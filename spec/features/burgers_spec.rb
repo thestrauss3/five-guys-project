@@ -19,8 +19,12 @@ end
 
 feature "User views a burger index page" do
   scenario "User visits the overall burger index" do
-    Burger.create name: "baconator", description: "lots of bacon", restaurant_name: "wendys"
-    Burger.create name: "Five Guys' Burger", description: "Best of the best", restaurant_name: "five_guys"
+    five_guys = Restaurant.create(name: "Five guys", location: "Boston", dining_type: "Might be a selction", description: "Really awesome food Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text", hours: "9am-9pm")
+    wendys = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Might be a selction", description: "Really long lines", hours: "10am-10pm")
+
+    Burger.create name: "baconator", description: "lots of bacon", restaurant: wendys
+    Burger.create name: "Five Guys' Burger", description: "Best of the best", restaurant: five_guys
+
     visit burgers_path
     expect(page).to have_content "All Burgers"
     expect(page).to have_content "baconator"
@@ -34,4 +38,19 @@ feature "User views a burger index page" do
     # expect(page).to have_content "Five Guys' Burger"
     # expect(page).to_not have_content "baconator"
   # end
+end
+
+feature "User views a specific burger page" do
+  scenario "User should see things about the Burger" do
+    wendys = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Might be a selction", description: "Really long lines and long text too", hours: "10am-10pm")
+    baconator = Burger.create name: "Baconator", description: "Lots of bacon", price: "$5", restaurant: wendys, image_url: "baconator.jpg"
+    visit burger_path(baconator)
+    expect(page).to have_content "Baconator"
+    expect(page).to have_xpath("//img[contains(@src, 'baconator.jpg')]")
+  end
+  scenario "If there is no image, there is no image shown" do
+    wendys = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Might be a selction", description: "Really long lines", hours: "10am-10pm")
+    baconator = Burger.create name: "Baconator", description: "Lots of bacon", price: "$5", restaurant: wendys
+    expect(page).to_not have_xpath("//img")
+  end
 end
