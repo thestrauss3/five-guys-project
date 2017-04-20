@@ -8,10 +8,12 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <header>
-    Sign in
-    <%= link_to 'Home', root_path %>
-    <%= link_to 'Burgers', burgers_path %>
-    <%= link_to 'Restaurants', restaurants_path %>
+    <div class="links">
+      Sign in
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Burgers', burgers_path %>
+      <%= link_to 'Restaurants', restaurants_path %>
+    </div>
   </header>
   <body>
     <div id="app">
@@ -19,7 +21,7 @@
         <% flash.each do |kind, message| %>
           <p><%= message %></p>
         <% end %>
-      <div>
+      </div>
       <%= yield %>
     </div>
   </body>

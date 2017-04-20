@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Restaurant.destroy_all
 Burger.destroy_all
+User.destroy_all
 five_guys = Restaurant.create(name: "Five guys", location: "Boston", dining_type: "Might be a selction", description: "Really awesome food Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text", hours: "9am-9pm")
 wendys = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Might be a selction", description: "Really long lines, don't forget that frosty(chocolate)", hours: "10am-10pm")
 mcdonalds = Restaurant.create(name: "McDonalds", location: "Boston", dining_type: "Might be a selction", description: "Got dem fries and got that McFrosty shakersssss", hours: "11am-11pm")
