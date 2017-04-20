@@ -20,7 +20,7 @@ end
 feature "User views a burger index page" do
   scenario "User visits the overall burger index" do
     five_guys = Restaurant.create(name: "Five guys", location: "Boston", dining_type: "Might be a selction", description: "Really awesome food Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text", hours: "9am-9pm")
-    wendys = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Might be a selction", description: "Really long lines", hours: "10am-10pm")
+    wendys = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Might be a selction", description: "Really long lines really long text", hours: "10am-10pm")
 
     Burger.create name: "baconator", description: "lots of bacon", restaurant: wendys
     Burger.create name: "Five Guys' Burger", description: "Best of the best", restaurant: five_guys
@@ -46,7 +46,7 @@ feature "User views a specific burger page" do
     baconator = Burger.create name: "Baconator", description: "Lots of bacon", price: "$5", restaurant: wendys, image_url: "baconator.jpg"
     visit burger_path(baconator)
     expect(page).to have_content "Baconator"
-    expect(page).to have_xpath("//img[contains(@src, 'baconator.jpg')]")
+    expect(page).to have_css("img[src*='baconator']")
   end
   scenario "If there is no image, there is no image shown" do
     wendys = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Might be a selction", description: "Really long lines", hours: "10am-10pm")

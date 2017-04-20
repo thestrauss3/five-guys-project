@@ -5,5 +5,5 @@
 <h3><%= @burger.restaurant.name %></h3>
 <h3></h3>
 <% if @burger.image_url %>
-  <img src="/assets/<%= @burger.image_url %>" />
+  <%= image_tag @burger.image_url, id: "burger_image"%>
 <% end %>
