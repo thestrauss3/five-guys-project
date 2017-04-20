@@ -20,3 +20,6 @@
 /coverage
 
 .env
+
+#Ignore npm install
+/node_modules
