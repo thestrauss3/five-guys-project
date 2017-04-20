@@ -11,11 +11,21 @@
     <%= csrf_meta_tags %>
   </head>
   <header>
-    <div class="links">
-      Sign in
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'Burgers', burgers_path %>
-      <%= link_to 'Restaurants', restaurants_path %>
+    <div class="row">
+      <div class="links small-9 columns">
+        Sign in
+        <%= link_to 'Home', root_path %>
+        <%= link_to 'Burgers', burgers_path %>
+        <%= link_to 'Restaurants', restaurants_path %>
+      </div>
+      <div class="login small-2 columns">
+        <% if current_user.present? %>
+          <%= link_to "Log Out", destroy_user_session_path, :method => :delete %></br>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path%>
+          <%= link_to "Sign Up", new_user_registration_path%>
+        <% end %>
+      </div>
     </div>
   </header>
   <body>

@@ -50,12 +50,9 @@ feature "User views information about burgers" do
 
   feature "User views a specific burger page" do
     scenario "User should see things about the Burger" do
-      # binding.pry
       wendys
       baconator
-      puts "something something something something something"
       visit burger_path(baconator)
-      # binding.pry
       expect(page).to have_content "baconator"
       expect(page).to have_css("img[src*='baconator']")
     end
@@ -64,7 +61,6 @@ feature "User views information about burgers" do
       five_guys
       five_guys_burger
       visit burger_path(five_guys_burger)
-      # binding.pry
       expect(page).to_not have_xpath("//img")
     end
   end
