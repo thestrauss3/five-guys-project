@@ -1,0 +1,25 @@
+<h1>Restaurant Form </h1>
+
+<%= form_for @restaurant do |f|%>
+
+<%= f.label :name, "Name" %>
+<%= f.text_field :name %>
+
+<%= f.label :location, "Location" %>
+<%= f.text_field :location %>
+
+<%= f.label :dining_type, "Dining Type" %>
+<%= f.text_field :dining_type %>
+
+<%= f.label :description, "Description" %>
+<%= f.text_area :description %>
+
+<%= f.label :hours, "Hours" %>
+<%= f.text_field :hours %>
+
+<%= f.submit "Add Restaurant" %>
+<% end %>
+
+<% if @restaurant.errors.present? %>
+<%= @restaurant.errors.full_messages.to_sentence %>
+<% end %>
