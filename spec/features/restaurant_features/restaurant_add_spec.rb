@@ -1,8 +1,7 @@
 require "rails_helper"
 
-feature "visits restaurant index page do" do
+feature "User can click a link from restaurant index to add a new restaurant" do
   scenario "user sees link to add a restaurant" do
-
     visit restaurants_path
     expect(page).to have_content("Restaurant not on our list? Add one to the list!")
 
