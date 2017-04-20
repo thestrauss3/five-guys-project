@@ -18,7 +18,6 @@ class RestaurantsController < ApplicationController
       flash[:success] = "Restaurant added successfully"
       redirect_to restaurant_path(@restaurant)
     else
-      flash[:error] = "Please correct the Form Errors"
       render :new
     end
   end

@@ -7,6 +7,8 @@ class ReviewsController < ApplicationController
   def new
     @burger = Burger.find(params[:burger_id])
     @review = Review.new
+    @burger_rating = params[:burger_rating]
+    @body = params[:body]
   end
 
   def create
@@ -17,7 +19,6 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review submitted successfully!"
       redirect_to burger_path(@burger)
     else
-      flash[:error] = @review.errors.full_messages.join(". \n")
       render :new
     end
   end
