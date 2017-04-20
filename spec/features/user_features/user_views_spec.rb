@@ -31,6 +31,7 @@ feature "user visits the index page" do
     fill_in "Password", with: "123456"
     click_button "Log in"
     expect(page).to have_content "Log Out"
+    expect(page).to have_content "Log Out"
     expect(page).not_to have_content "Log In"
     expect(page).not_to have_content "Sign Up"
   end

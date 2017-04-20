@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "user attemps to sign up" do
+feature "user attempts to sign up" do
   scenario do
     visit new_user_registration_path
     fill_in "First Name", with: "Omar"
