@@ -12,12 +12,12 @@
   </head>
   <header>
     <div class="row">
-      <div class="links small-9 columns">
+      <div class="links small-6 columns">
         <%= link_to 'Home', root_path %>
         <%= link_to 'Burgers', burgers_path %>
         <%= link_to 'Restaurants', restaurants_path %>
       </div>
-      <div class="text-right small-2 columns">
+      <div class="text-right small-6 columns">
         <% if current_user.present? %>
           <%= link_to "Log Out", destroy_user_session_path, :method => :delete %></br>
         <% else %>
@@ -29,7 +29,7 @@
   </header>
   <body>
     <div class="row">
-      <div class="links small-9 columns">
+      <div class="small-9 columns">
         <div id="app">
           <div>
             <% flash.each do |kind, message| %>
