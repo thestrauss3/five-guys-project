@@ -1,0 +1,14 @@
+<h1>Add a new review for <%= @burger.name %></h1>
+<%= form_for [@burger, @review] do |f| %>
+  <div class="field">
+    <%= f.label :burger_rating, "Rating" %><br/>
+    <%= f.number_field :burger_rating %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body %><br/>
+    <%= f.text_area :body %>
+  </div>
+
+  <%= f.submit "Submit Review" %>
+<% end %>

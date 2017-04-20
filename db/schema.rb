@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419154035) do
+ActiveRecord::Schema.define(version: 20170420153004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,13 +26,23 @@ ActiveRecord::Schema.define(version: 20170419154035) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.string   "name",        null: false
-    t.string   "location",    null: false
-    t.string   "dining_type", null: false
-    t.string   "description", null: false
-    t.string   "hours",       null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "name",                              null: false
+    t.string   "location",                          null: false
+    t.string   "dining_type", default: "Undefined", null: false
+    t.string   "description",                       null: false
+    t.string   "hours",       default: "Undefined", null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "burger_id"
+    t.integer  "burger_rating",             null: false
+    t.text     "body",                      null: false
+    t.integer  "review_rating", default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["burger_id"], name: "index_reviews_on_burger_id", using: :btree
   end
 
 end
