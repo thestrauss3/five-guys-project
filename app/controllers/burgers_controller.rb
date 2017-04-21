@@ -9,18 +9,23 @@ class BurgersController < ApplicationController
   end
 
   def new
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @name = params[:name]
-    @price = params[:price]
-    @description = params[:description]
-    @image_url = params[:image_url]
-    @burger = Burger.new(
-      name: @name,
-      price: @price,
-      description: @description,
-      image_url: @image_url,
-      restaurant: @restaurant
-    )
+    if !current_user.present?
+      flash[:error] = "Please log in before trying to submit a burger!"
+      redirect_to new_user_session_path
+    else
+      @restaurant = Restaurant.find(params[:restaurant_id])
+      @name = params[:name]
+      @price = params[:price]
+      @description = params[:description]
+      @image_url = params[:image_url]
+      @burger = Burger.new(
+        name: @name,
+        price: @price,
+        description: @description,
+        image_url: @image_url,
+        restaurant: @restaurant
+      )
+    end
   end
 
   def create

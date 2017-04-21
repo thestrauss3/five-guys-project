@@ -19,7 +19,8 @@
       </div>
       <div class="text-right small-6 columns">
         <% if current_user.present? %>
-          <%= link_to "Log Out", destroy_user_session_path, :method => :delete %></br>
+          <span><%=current_user.username %><span>
+          <span><%= link_to "Log Out", destroy_user_session_path, :method => :delete %><span></br>
         <% else %>
           <%= link_to "Log In", new_user_session_path%>
           <%= link_to "Sign Up", new_user_registration_path%>
