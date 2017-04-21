@@ -31,7 +31,7 @@ class BurgersController < ApplicationController
       flash[:notice] = "Burger submitted successfully!"
       redirect_to burger_path(@burger)
     else
-      resubmit = {failed_submit: true}
+      resubmit = { failed_submit: true }
       redirect_to new_restaurant_burger_path(burger_params.merge(resubmit))
     end
   end

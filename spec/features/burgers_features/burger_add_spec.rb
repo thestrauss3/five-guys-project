@@ -1,7 +1,6 @@
 require "rails_helper"
 
 feature "User visits new burger page" do
-  let(:restaurant) { Restaurant.create(name: "restaurant", location: "Boston", dining_type: "Might be a selction", description: "Really long lines and really long text", hours: "10am-10pm") }
   let(:restaurant) { FactoryGirl.create(:restaurant) }
   scenario "User sees a form to enter burger information" do
     restaurant
@@ -15,7 +14,7 @@ feature "User visits new burger page" do
 
     fill_in 'Name', with: "Double Garlic Steak Burger"
     fill_in 'Price', with: 4
-    fill_in 'Description', with: "A seasame seed bun, swiss cheese, and two beef patties slathered in Garlic Butter"
+    fill_in 'Description', with: Faker::Internet.ip_v6_address
     click_button 'Add Burger'
 
     expect(page).to have_content "Burger submitted successfully"
