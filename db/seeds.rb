@@ -14,3 +14,7 @@ mcdonalds = Restaurant.create(name: "McDonalds", location: "Boston", dining_type
 Burger.create name: "Baconator", description: "Lots of bacon", price: "$5", restaurant: wendys, image_url: "baconator.jpg"
 Burger.create name: "Five Guys Burger", description: "MMmmmmm", price: "$10", restaurant: five_guys, image_url: "https://lintvkhon.files.wordpress.com/2016/06/fiveguys_burgerfries2.jpg?w=650&h=433"
 Burger.create name: "Big Mac", description: "Special Sauce", price: "$8", restaurant: mcdonalds
+
+
+admin_user=User.create(email: "pikachu@pokemon.com", password: "123456", username: "Ash", first_name: "Bob", last_name: "Dole", admin: true)
+user= User.create(email: "snorlax@pokemon.com", password: "123456", username: "Misty", first_name: "Jean", last_name: "Simmons")
