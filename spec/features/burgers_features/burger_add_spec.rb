@@ -1,7 +1,11 @@
 require "rails_helper"
 
 feature "User visits new burger page" do
+  let(:user1) { FactoryGirl.create(:user) }
+  let(:user2) { FactoryGirl.create(:user, email: "bilbow@yahoo.com", admin: true) }
+
   scenario "User sees a form to enter burger information" do
+    binding.pry
     wendys = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Might be a selction", description: "Really long lines and really long text", hours: "10am-10pm")
     visit new_restaurant_burger_path(wendys)
     expect(page).to have_content "Add a burger"
