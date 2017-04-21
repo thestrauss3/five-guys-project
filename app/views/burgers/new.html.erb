@@ -1,6 +1,5 @@
 <h1>Add a burger</h1>
 
-
 <% if @errors.present? %>
   <ul>
     <% @errors.each do |msg| %>
@@ -8,15 +7,6 @@
     <% end %>
   </ul>
 <% end %>
-<!-- <% if params[:failed_submit]  %>
-  <% @burger.valid? %>
-  <h3>This burger was not created because:</h3>
-  <ul>
-    <% @burger.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %> -->
 
 <%= form_for [@restaurant, @burger] do |f| %>
   <div class="field">

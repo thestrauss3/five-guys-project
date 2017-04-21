@@ -43,7 +43,6 @@ feature "User views information about a specific burger" do
 
   scenario "User sees the review with the most upvotes" do
     visit burger_path(burger2)
-    save_and_open_page
     expect(page).to have_content review_with_high_vote.body
     expect(page).to_not have_content review_with_low_vote.body
   end

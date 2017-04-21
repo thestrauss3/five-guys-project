@@ -1,10 +1,8 @@
 <h1>Restaurant Form </h1>
 
-<% if params[:failed_submit] %>
-  <% @restaurant.valid? %>
-  <h3>This restaurant was not added because:</h3>
+<% if @errors.present? %>
   <ul>
-    <% @restaurant.errors.full_messages.each do |msg| %>
+    <% @errors.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
   </ul>

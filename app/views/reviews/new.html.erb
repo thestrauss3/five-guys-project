@@ -1,16 +1,12 @@
 <h1>Add a new review for <%= @burger.name %></h1>
 
-<% if params[:failed_submit] %>
-  <% @review.valid? %>
-  <h3>This review was not submitted because:</h3>
+<% if @errors.present? %>
   <ul>
-    <% @review.errors.full_messages.each do |msg| %>
+    <% @errors.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
   </ul>
 <% end %>
-
-
 
 <%= form_for [@burger, @review] do |f| %>
   <div class="field">
