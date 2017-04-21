@@ -5,12 +5,8 @@ import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 class RestaurantShow extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      currentLine: "null",
-      currentDirection: "null"
     }
-
   }
 
   render() {

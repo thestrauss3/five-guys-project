@@ -7,18 +7,12 @@ import RestaurantIndex from '../components/RestaurantIndex';
 import RestaurantShow from '../components/RestaurantShow';
 import BurgerNew from '../components/BurgerNew';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      currentLine: "null",
-      currentDirection: "null"
     }
-
   }
-
 
   render() {
     return (
