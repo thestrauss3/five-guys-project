@@ -1,5 +1,15 @@
 <h1>Restaurant Form </h1>
 
+<% if params[:failed_submit] %>
+  <% @restaurant.valid? %>
+  <h3>This restaurant was not added because:</h3>
+  <ul>
+    <% @restaurant.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @restaurant do |f|%>
 
 <%= f.label :name, "Name" %>
@@ -18,8 +28,4 @@
 <%= f.text_field :hours %>
 
 <%= f.submit "Add Restaurant" %>
-<% end %>
-
-<% if @restaurant.errors.present? %>
-<%= @restaurant.errors.full_messages.to_sentence %>
 <% end %>

@@ -1,23 +1,34 @@
 <h1>Add a burger</h1>
+
+<% if params[:failed_submit]  %>
+  <% @burger.valid? %>
+  <h3>This burger was not created because:</h3>
+  <ul>
+    <% @burger.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for [@restaurant, @burger] do |f| %>
   <div class="field">
     <%= f.label :name %><br/>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, value: @name %>
   </div>
 
   <div class="field">
     <%= f.label :price %><br/>
-    <%= f.number_field :price %>
+    <%= f.number_field :price, value: @price %>
   </div>
 
   <div class="field">
     <%= f.label :description %><br/>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, value: @description %>
   </div>
 
   <div class="field">
     <%= f.label :image_url, "Enter the URL for an image of this burger" %><br/>
-    <%= f.text_area :image_url %>
+    <%= f.text_area :image_url, value: @image_url %>
   </div>
 
   <%= f.submit "Add Burger" %>
