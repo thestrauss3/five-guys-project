@@ -10,17 +10,18 @@ class BurgersController < ApplicationController
 
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @name = params[:name]
-    @price = params[:price]
-    @description = params[:description]
-    @image_url = params[:image_url]
-    @burger = Burger.new(
-      name: @name,
-      price: @price,
-      description: @description,
-      image_url: @image_url,
-      restaurant: @restaurant
-    )
+    @burger = Burger.new
+    # @name = params[:name]
+    # @price = params[:price]
+    # @description = params[:description]
+    # @image_url = params[:image_url]
+    # @burger = Burger.new(
+    #   name: @name,
+    #   price: @price,
+    #   description: @description,
+    #   image_url: @image_url,
+    #   restaurant: @restaurant
+    # )
   end
 
   def create
@@ -31,8 +32,10 @@ class BurgersController < ApplicationController
       flash[:notice] = "Burger submitted successfully!"
       redirect_to burger_path(@burger)
     else
-      resubmit = { failed_submit: true }
-      redirect_to new_restaurant_burger_path(burger_params.merge(resubmit))
+      @errors = @burger.errors.full_messages
+      render :new
+      # resubmit = { failed_submit: true }
+      # redirect_to new_restaurant_burger_path(burger_params.merge(resubmit))
     end
   end
 
