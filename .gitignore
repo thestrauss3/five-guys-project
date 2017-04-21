@@ -16,7 +16,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore coveralls
 /coverage
-
 .env
+/node_modules

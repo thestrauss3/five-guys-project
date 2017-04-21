@@ -1,5 +1,5 @@
 body {
-  background-image: url('burger-wallpaper.jpg');
+  background-image: image-url('burger-wallpaper.jpg');
   background-color: #f0f0f0;
   background-blend-mode: screen;
 }
@@ -7,9 +7,19 @@ body {
 header {
   background-color: black;
   color: #f0f0f0;
-  opacity: 0.8;
+  opacity: 0.7;
+  padding-bottom: 15px;
+  border-bottom: 2px solid green;
 }
 
-.links:hover {
-  cursor: url('cursorburger.png'), default;
+a {
+  color: green;
+  font-weight: bolder;
+  font-size: 20px;
+  padding: 0px 2px 0px 2px;
+}
+
+a:hover {
+  color: yellow;
+  cursor: image-url('cursorburger.png'), default;
 }
