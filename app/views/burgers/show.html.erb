@@ -6,7 +6,10 @@
 <% if @burger.image_url %>
   <%= image_tag @burger.image_url, id: "burger_image"%>
 <% end %>
+
+
 <% unless @burger.reviews.empty? %>
+
   What do other people say about this burger?
   <%= @burger.reviews.order(:review_rating).last.body %>
 <% end %>

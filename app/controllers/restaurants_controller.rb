@@ -9,7 +9,18 @@ class RestaurantsController < ApplicationController
   end
 
   def new
-    @restaurant = Restaurant.new
+    @name = params[:name]
+    @location = params[:location]
+    @dining_type = params[:dining_type]
+    @description = params[:description]
+    @hours = params[:hours]
+    @restaurant = Restaurant.new(
+      name: @name,
+      location: @location,
+      dining_type: @dining_type,
+      description: @description,
+      hours: @hours
+    )
   end
 
   def create
@@ -18,7 +29,8 @@ class RestaurantsController < ApplicationController
       flash[:success] = "Restaurant added successfully"
       redirect_to restaurant_path(@restaurant)
     else
-      render :new
+      resubmit = { failed_submit: true }
+      redirect_to new_restaurant_path(restaurant_params.merge(resubmit))
     end
   end
 
