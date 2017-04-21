@@ -1,33 +1,21 @@
 require "rails_helper"
 
 feature "User views a burger index page" do
-  let(:five_guys) { Restaurant.create name: "Five Guys", location: "Boston", description: "This place has great burgers" }
-  let(:wendys) { Restaurant.create name: "Wendy's", location: "Boston", description: "Square burgers mmm tasty" }
-  let(:baconator) { Burger.create name: "baconator", description: "lots of bacon and lots of text", restaurant: wendys, image_url: "baconator.jpg" }
-  let(:five_guys_burger) { Burger.create name: "Five Guys' Burger", description: "Best of the best extra text for length", restaurant: five_guys }
+  let(:restaurant1) { FactoryGirl.create(:restaurant) }
+  let(:restaurant2) { FactoryGirl.create(:restaurant) }
+  let(:burger1) { FactoryGirl.create(:burger, restaurant: restaurant1) }
+  let(:burger2) { FactoryGirl.create(:burger, restaurant: restaurant2) }
 
   scenario "User visits the overall burger index" do
-    wendys
-    five_guys
-    baconator
-    five_guys_burger
+    restaurant1
+    restaurant2
+    burger1
+    burger2
 
     visit burgers_path
 
     expect(page).to have_content "All Burgers"
-    expect(page).to have_content "baconator"
-    expect(page).to have_content "Five Guys' Burger"
-  end
-
-  scenario "User visits the burger index for a particular restaurant" do
-    five_guys
-    five_guys_burger
-    wendys
-    baconator
-
-    visit restaurant_path(five_guys)
-    expect(page).to have_content "Burgers available at Five Guys"
-    expect(page).to have_content "Five Guys' Burger"
-    expect(page).to_not have_content "baconator"
+    expect(page).to have_content burger1.name
+    expect(page).to have_content burger2.name
   end
 end
