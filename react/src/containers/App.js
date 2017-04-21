@@ -18,7 +18,7 @@ class App extends Component {
       <div>
         <Router history={browserHistory}>
           <Route path='/'>
-            <Route path='/burgers' component={Burgers}>
+            <Route path='/burgers' component={Burgers}/>
           </Route>
         </Router>
       </div>
