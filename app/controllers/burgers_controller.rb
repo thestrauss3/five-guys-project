@@ -32,6 +32,7 @@ class BurgersController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @burger = Burger.new(burger_params)
     @burger.restaurant = @restaurant
+    @burger.user = current_user
     if @burger.save
       flash[:notice] = "Burger submitted successfully!"
       redirect_to burger_path(@burger)
