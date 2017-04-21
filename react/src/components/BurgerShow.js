@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 
 
-class Burgers extends Component {
+class BurgerShow extends Component {
   constructor(props) {
     super(props);
 
@@ -16,9 +16,10 @@ class Burgers extends Component {
   render() {
     return (
       <div>
+      <h1>Burger SHOW</h1>
       </div>
     )
   }
 }
 
-export default Burgers;
+export default BurgerShow;
