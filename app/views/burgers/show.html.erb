@@ -1,14 +1,16 @@
 <h1><%= @burger.name %></h1>
-
 <h3><%= @burger.description %></h3>
 <h3><%= @burger.price %></h3>
 <h3><%= @burger.restaurant.name %></h3>
+
 <% if @burger.image_url %>
   <%= image_tag @burger.image_url, id: "burger_image"%>
 <% end %>
+
 <% unless @burger.reviews.empty? %>
   What do other people say about this burger?
   <%= @burger.reviews.order(:review_rating).last.body %>
 <% end %>
+
 <%= link_to "See all reviews for this burger", burger_reviews_path(@burger) %>
 <p><%= link_to "Add a Review for this burger", new_burger_review_path(@burger) %></p>

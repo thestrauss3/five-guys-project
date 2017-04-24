@@ -16,6 +16,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem 'faker'
 end
 
 group :test do

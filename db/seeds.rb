@@ -8,9 +8,25 @@
 Restaurant.destroy_all
 Burger.destroy_all
 User.destroy_all
-five_guys = Restaurant.create(name: "Five guys", location: "Boston", dining_type: "Might be a selction", description: "Really awesome food Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text", hours: "9am-9pm")
-wendys = Restaurant.create(name: "Wendys", location: "Boston", dining_type: "Might be a selction", description: "Really long lines, don't forget that frosty(chocolate)", hours: "10am-10pm")
-mcdonalds = Restaurant.create(name: "McDonalds", location: "Boston", dining_type: "Might be a selction", description: "Got dem fries and got that McFrosty shakersssss", hours: "11am-11pm")
-Burger.create name: "Baconator", description: "Lots of bacon", price: "$5", restaurant: wendys, image_url: "baconator.jpg"
-Burger.create name: "Five Guys Burger", description: "MMmmmmm", price: "$10", restaurant: five_guys, image_url: "https://lintvkhon.files.wordpress.com/2016/06/fiveguys_burgerfries2.jpg?w=650&h=433"
-Burger.create name: "Big Mac", description: "Special Sauce", price: "$8", restaurant: mcdonalds
+10.times do
+  name =  Faker::Company.name
+  location = Faker::Address.city
+  description = Faker::Company.catch_phrase + "<< RESTAURANT DESCRIPTION"
+  FactoryGirl.create(:restaurant, name: name, location: location, description: description)
+end
+Restaurant.all.each do |r|
+  5.times do
+    price = Faker::Number.between(1,20)
+    url = Faker::Avatar.image
+    description = Faker::Food.ingredient + Faker::Food.ingredient + Faker::Food.ingredient + " BURGER DESCRIPTION"
+    name = Faker::Ancient.titan + "<< BURGER NAME"
+    FactoryGirl.create(:burger, restaurant: r, name: name, description: description, image_url: url, price: price)
+  end
+end
+Burger.all.each do |b|
+  3.times do
+    rating = Faker::Number.between(1,5) 
+    body = Faker::ChuckNorris.fact + " REVIEW BODY"
+    FactoryGirl.create(:review, burger: b, burger_rating: rating, body: body)
+  end
+end
