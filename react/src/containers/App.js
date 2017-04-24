@@ -16,6 +16,7 @@ class App extends Component {
       <Router history={browserHistory}>
         <Route path='/'>
           <Route path='/burgers' component={BurgerIndex} />
+          <Route path="/burgers/:id" component={BurgerShow} />
         </Route>
       </Router>
 
