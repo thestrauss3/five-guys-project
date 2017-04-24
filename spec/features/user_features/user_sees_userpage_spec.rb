@@ -20,15 +20,11 @@ feature "user sees the things on their user page" do
   scenario "user can visit userspage through clicking on username" do
     login_as(user1, :scope => :user)
     visit root_path
-    save_and_open_page
     click_link user1.username
-    # visit user_path(user1)
-    # save_and_open_page
-    binding.pry
     expect(page).to have_content "My Burger Submissions"
     expect(page).to have_content "My Burger Reviews"
-    expect(page).to have_content user1.burgers.first.name
-    expect(page).to have_content user1.burgers.second.name
+    expect(page).to have_link user1.burgers.first.name
+    expect(page).to have_link user1.burgers.second.name
 
   end
 end
