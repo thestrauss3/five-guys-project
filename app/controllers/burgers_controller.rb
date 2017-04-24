@@ -9,8 +9,13 @@ class BurgersController < ApplicationController
   end
 
   def new
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @burger = Burger.new
+    if current_user.present?
+      @restaurant = Restaurant.find(params[:restaurant_id])
+      @burger = Burger.new
+    else
+      flash[:error] = "Please log in before trying to submit a burger!"
+      redirect_to new_user_session_path
+    end
   end
 
   def create
@@ -27,7 +32,7 @@ class BurgersController < ApplicationController
   end
 
   private
-git
+
   def burger_params
     params.require(:burger).permit(
       :name,
