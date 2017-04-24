@@ -9,4 +9,10 @@
 
 <div class="">
   <h2>My Burger Reviews</h2>
+  <% @user.reviews.each do |review| %>
+    <div class="review_tile">
+      <h4>Review for <%= review.burger.name %><h4><br />
+      <p><%=review.body%></p>
+    </div>
+  <% end %>
 </div>
