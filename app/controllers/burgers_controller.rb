@@ -9,18 +9,19 @@ class BurgersController < ApplicationController
   end
 
   def new
-    @burger = Burger.new
     @restaurant = Restaurant.find(params[:restaurant_id])
+    @burger = Burger.new
   end
 
   def create
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @burger = Burger.new(burger_params)
-    @burger.restaurant = Restaurant.find(params[:restaurant_id])
+    @burger.restaurant = @restaurant
     if @burger.save
       flash[:notice] = "Burger submitted successfully!"
       redirect_to burger_path(@burger)
     else
-      flash[:error] = @burger.errors.full_messages.join(". \n")
+      @errors = @burger.errors.full_messages
       render :new
     end
   end

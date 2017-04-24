@@ -1,7 +1,9 @@
-<h1>Burgers Index</h1>
-<h1>All Burgers</h1>
-<ul>
-  <% @burgers.each do |burger| %>
-    <li><%= link_to burger.name, burger_path(burger) %></li>
-  <% end %>
-</ul>
+<div id="burger-index">
+  <h1>Burgers Index</h1>
+  <h1>All Burgers</h1>
+  <ul>
+    <% @burgers.each do |burger| %>
+      <li><%= link_to burger.name, burger_path(burger) %></li>
+    <% end %>
+  </ul>
+</div>

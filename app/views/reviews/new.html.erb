@@ -1,4 +1,13 @@
 <h1>Add a new review for <%= @burger.name %></h1>
+
+<% if @errors.present? %>
+  <ul>
+    <% @errors.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for [@burger, @review] do |f| %>
   <div class="field">
     <%= f.label :burger_rating, "Rating" %><br/>
