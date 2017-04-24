@@ -6,7 +6,6 @@ feature "user sees the things on their user page" do
   let!(:burger1) do
     FactoryGirl.create(:burger,
       restaurant: restaurant,
-      image_url: nil,
       name: "Just another burger",
       user: user1)
     end
