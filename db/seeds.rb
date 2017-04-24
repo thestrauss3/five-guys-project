@@ -23,7 +23,7 @@ end
 Restaurant.all.each do |r|
   3.times do
     price = Faker::Number.between(1,20)
-    url = Faker::Avatar.image
+    url = "baconator.jpg"
     description = Faker::Food.ingredient + Faker::Food.ingredient + Faker::Food.ingredient + " BURGER DESCRIPTION"
     name = Faker::Ancient.titan + "<< BURGER NAME"
     FactoryGirl.create(:burger, restaurant: r, name: name, description: description, image_url: url, price: price, user: user)

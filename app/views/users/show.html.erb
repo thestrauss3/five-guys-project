@@ -3,6 +3,7 @@
   <h2>My Burger Submissions</h2>
   <% @user.burgers.each do |burger| %>
   <p><%= link_to burger.name, burger_path(burger) %></p>
+  <%=image_tag(burger.image_url) %>
   <% end %>
 </div>
 
