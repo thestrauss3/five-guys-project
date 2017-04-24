@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :new, :create]
   end
   resources :reviews, only: [:show]
+
+  resources :users, only: [:show]
+  resources :admin, only: [:show]
+
   # post 'burgers' => 'burgers/new'
   # post 'reviews' => 'reviews/new'
   # post 'restaurants' => 'restaurants/new'
@@ -17,4 +21,5 @@ Rails.application.routes.draw do
       resources :burgers
     end
   end
+
 end
