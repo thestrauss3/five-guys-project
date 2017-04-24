@@ -1,11 +1,19 @@
 <h1>Hi there <%= @user.username %>! </h1>
 <div>
   <h2>My Burger Submissions</h2>
+  <div class="row">
   <% @user.burgers.each do |burger| %>
-  <p><%= link_to burger.name, burger_path(burger) %></p>
+    <div class= "small-6 columns">
+      <p><%= link_to burger.name, burger_path(burger) %></p>
+    </div>
+    <div class= "small-6 columns">
+      <%=image_tag(burger.image_url)%>
+    </div>
   <% end %>
+  </div>
 </div>
 
 <div class="">
   <h2>My Burger Reviews</h2>
+
 </div>
