@@ -13,11 +13,13 @@ User.destroy_all
 end
 Restaurant.all.each do |r|
   5.times do
-    FactoryGirl.create(:burger, restaurant: r)
+    FactoryGirl.create(:burger, restaurant: r, name: { Faker::Ancient.titan }, description: { Faker::Food.ingredient + Faker::Food.ingredient + Faker::Food.ingredient }, image_url: { Faker::Avatar.image }, price: { Faker::Number.between(1,20) })
   end
 end
 Burger.all.each do |b|
   3.times do
-    FactoryGirl.create(:review, burger: b)
+    rating = { Faker::Number.between(1,5) }
+    body = { Faker::ChuckNorris.fact }
+    FactoryGirl.create(:review, burger: b, burger_rating: rating, body: body)
   end
 end
