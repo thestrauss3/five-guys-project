@@ -1,6 +1,6 @@
-$primary-green: green;
+$primary-green: #008000;
 $primary-white: #f0f0f0;
-$primary-green: green;
+$primary-black: #0A0310;
 
 body {
   background-blend-mode: screen;
@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  background-color: #0A0310;
+  background-color: $primary-black;
   color: $primary-white;
   opacity: 0.7;
   padding-bottom: 2px;
