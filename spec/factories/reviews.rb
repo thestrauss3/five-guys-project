@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :review do
-    burger_rating { Faker::Number.between(1,5)}
-    body { Faker::ChuckNorris.fact + "REVIEW BODY"}
+    burger_rating 4
+    body "I've had this burger a dozen times, it's delicious"
     review_rating 0
   end
 end
