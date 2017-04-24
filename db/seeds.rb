@@ -14,14 +14,14 @@ Review.destroy_all
 admin_user=User.create(email: "admin@gmail.com", password: "123456", username: "Ash", first_name: "Bob", last_name: "Dole", admin: true)
 user= User.create(email: "user@gmail.com", password: "123456", username: "Misty", first_name: "Jean", last_name: "Simmons")
 
-3.times do
+2.times do
   name =  Faker::Company.name
   location = Faker::Address.city
   description = Faker::Company.catch_phrase + "<< RESTAURANT DESCRIPTION"
   FactoryGirl.create(:restaurant, name: name, location: location, description: description)
 end
 Restaurant.all.each do |r|
-  3.times do
+  1.times do
     price = Faker::Number.between(1,20)
     url = "baconator.jpg"
     description = Faker::Food.ingredient + Faker::Food.ingredient + Faker::Food.ingredient + " BURGER DESCRIPTION"
@@ -31,9 +31,9 @@ Restaurant.all.each do |r|
 end
 
 Burger.all.each do |b|
-  3.times do
+  1.times do
     rating = Faker::Number.between(1,5)
     body = Faker::ChuckNorris.fact + " REVIEW BODY"
-    FactoryGirl.create(:review, burger: b, burger_rating: rating, body: body)
+    FactoryGirl.create(:review, burger: b, burger_rating: rating, body: body, user: user)
   end
 end
