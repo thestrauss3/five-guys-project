@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
 
   def new
     @burger = Burger.find(params[:burger_id])
-    @review = Review.new()
+    @review = Review.new
   end
 
   def create
