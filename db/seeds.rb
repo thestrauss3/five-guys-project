@@ -9,17 +9,24 @@ Restaurant.destroy_all
 Burger.destroy_all
 User.destroy_all
 10.times do
-  FactoryGirl.create(:restaurant, name: { Faker::Company.name }, location: { Faker::Address.city }, description: { Faker::Company.catch_phrase + "<< Restaurant Description" })
+  name =  Faker::Company.name
+  location = Faker::Address.city
+  description = Faker::Company.catch_phrase + "<< RESTAURANT DESCRIPTION"
+  FactoryGirl.create(:restaurant, name: name, location: location, description: description)
 end
 Restaurant.all.each do |r|
   5.times do
-    FactoryGirl.create(:burger, restaurant: r, name: { Faker::Ancient.titan }, description: { Faker::Food.ingredient + Faker::Food.ingredient + Faker::Food.ingredient }, image_url: { Faker::Avatar.image }, price: { Faker::Number.between(1,20) })
+    price = Faker::Number.between(1,20)
+    url = Faker::Avatar.image
+    description = Faker::Food.ingredient + Faker::Food.ingredient + Faker::Food.ingredient + " BURGER DESCRIPTION"
+    name = Faker::Ancient.titan + "<< BURGER NAME"
+    FactoryGirl.create(:burger, restaurant: r, name: name, description: description, image_url: url, price: price)
   end
 end
 Burger.all.each do |b|
   3.times do
-    rating = { Faker::Number.between(1,5) }
-    body = { Faker::ChuckNorris.fact }
+    rating = Faker::Number.between(1,5) 
+    body = Faker::ChuckNorris.fact + " REVIEW BODY"
     FactoryGirl.create(:review, burger: b, burger_rating: rating, body: body)
   end
 end
