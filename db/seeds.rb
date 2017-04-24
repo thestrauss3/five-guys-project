@@ -9,7 +9,7 @@ Restaurant.destroy_all
 Burger.destroy_all
 User.destroy_all
 10.times do
-  FactoryGirl.create(:restaurant)
+  FactoryGirl.create(:restaurant, name: { Faker::Company.name }, location: { Faker::Address.city }, description: { Faker::Company.catch_phrase + "<< Restaurant Description" })
 end
 Restaurant.all.each do |r|
   5.times do
