@@ -3,6 +3,7 @@ import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
 import $ from 'jquery';
 import 'jasmine-ajax';
+import { expect } from 'chai';
 
 Object.assign(global, {
   jasmineEnzyme,
