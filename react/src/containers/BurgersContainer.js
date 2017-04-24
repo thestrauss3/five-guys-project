@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 
-
-class BurgerIndex extends Component {
+class BurgersContainer extends Component {
   constructor(props) {
     super(props);
     this.state = { burger: '' };
@@ -36,23 +35,22 @@ class BurgerIndex extends Component {
 
   render() {
     let burgers;
-
     if (this.state.burgers) {
       burgers = this.state.burgers.map(burger => {
         return(
           <h4>
-            <li>{burger.name}</li>
+            <li><Link to={`/burgers/${burger.id}`}>{burger.name}</Link></li>
           </h4>
         )
       })
     }
     return (
       <div>
-       <h1>look et teh burgrz:</h1>
+       <h1>All Burgers:</h1>
        {burgers}
       </div>
     )
   }
 }
 
-export default BurgerIndex;
+export default BurgersContainer;
