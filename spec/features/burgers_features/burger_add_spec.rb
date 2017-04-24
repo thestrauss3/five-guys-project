@@ -24,7 +24,7 @@ feature "User visits new burger page" do
 
     fill_in 'Name', with: "Double Garlic Steak Burger"
     fill_in 'Price', with: 4
-    fill_in 'Description', with: Faker::Internet.ip_v6_address
+    fill_in 'Description', with: "This burger is so good, you will want to eat five of them!"
 
     click_button 'Add Burger'
 

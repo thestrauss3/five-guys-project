@@ -11,3 +11,6 @@ We need to link users to burgers on submission
   make the relationship in models one user has many burgers
 
   upvote downvote table
+
+
+get user show page going

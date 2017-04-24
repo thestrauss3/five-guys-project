@@ -1,0 +1,6 @@
+<h1>Hi there <%= @user.username %>! </h1>
+<div>
+  <% @user.burgers.each do |burger| %>
+  <p><%= link_to burger.name, burger_path(burger) %></p>
+  <% end %>
+</div>

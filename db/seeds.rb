@@ -8,8 +8,9 @@
 Restaurant.destroy_all
 Burger.destroy_all
 User.destroy_all
+Review.destroy_all
 
-# come back to add users to burger and restaurant column
+# come back to add users to review, burger, and restaurant column
 admin_user=User.create(email: "admin@gmail.com", password: "123456", username: "Ash", first_name: "Bob", last_name: "Dole", admin: true)
 user= User.create(email: "user@gmail.com", password: "123456", username: "Misty", first_name: "Jean", last_name: "Simmons")
 
@@ -25,9 +26,10 @@ Restaurant.all.each do |r|
     url = Faker::Avatar.image
     description = Faker::Food.ingredient + Faker::Food.ingredient + Faker::Food.ingredient + " BURGER DESCRIPTION"
     name = Faker::Ancient.titan + "<< BURGER NAME"
-    FactoryGirl.create(:burger, restaurant: r, name: name, description: description, image_url: url, price: price)
+    FactoryGirl.create(:burger, restaurant: r, name: name, description: description, image_url: url, price: price, user: user)
   end
 end
+
 Burger.all.each do |b|
   3.times do
     rating = Faker::Number.between(1,5)
