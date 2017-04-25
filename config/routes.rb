@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [:show]
 
-  resources :users, only: [:show, :update] do
+  resources :users, only: [:show, :edit, :update] do
     resources :avatars, only: [:edit, :update]
   end
 

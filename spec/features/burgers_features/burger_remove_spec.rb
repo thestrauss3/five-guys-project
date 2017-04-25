@@ -8,8 +8,8 @@ feature "User want to delete a burger" do
   let!(:restaurant) { FactoryGirl.create(:restaurant) }
   let!(:burger) { FactoryGirl.create(:burger, restaurant: restaurant, user:user) }
 
-
-  scenario "User that added the burger deletes the burger" do
+  # save test for burger deletion
+  xscenario "User that added the burger deletes the burger" do
     visit burger_path(burger)
     # target some x related to the burger --> for users page
     click_button "Delete Burger Submission"
@@ -19,14 +19,14 @@ feature "User want to delete a burger" do
     # expect(page).to_not have_content "Add a burger"
   end
 
-  scenario "Admin deletes the burger" do
+  xscenario "Admin deletes the burger" do
     visit burger_path(burger)
     # target some x related to the burger --> for users page
     click_button "Delete Burger Submission"
     expect(page).to have_content "You have successfully delete the burger submission"
   end
 
-  scenario "Fake user deletes the burger" do
+  xscenario "Fake user deletes the burger" do
     visit burger_path(burger)
     # target some x related to the burger --> for users page
     click_button "Delete Burger Submission"
