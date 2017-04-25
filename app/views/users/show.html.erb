@@ -1,6 +1,11 @@
 <%= link_to "Add a photo", edit_user_avatar_path(@user) %>
 <h1>Hi there <%= @user.username %>! </h1>
 <div>
+  <% if @user.avatar.present? %>
+    <%= image_tag(@user.avatar.url, size: "100x100") %>
+  <% end %>
+</div>
+<div>
   <h2>My Burger Submissions</h2>
   <% @user.burgers.each do |burger| %>
   <p><%= link_to burger.name, burger_path(burger) %></p>

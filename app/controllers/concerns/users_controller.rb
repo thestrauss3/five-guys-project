@@ -11,12 +11,14 @@ class UsersController < ApplicationController
 
  def update
   if params[:user][:avatar].present?
-    @user= current_user
-    redirect_to user_path(current_user)
+    @user = current_user
+    @user.avatar = params[:user][:avatar]
+    @user.save!
     flash[:notice] = "Avatar successfully saved!"
-  else
     redirect_to user_path(current_user)
-    flash[:error]= "What did you do?!"
+  else
+    flash[:error] = "What did you do?!"
+    redirect_to user_path(current_user)
   end
  end
 
