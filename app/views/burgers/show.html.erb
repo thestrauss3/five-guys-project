@@ -2,7 +2,6 @@
 <h3><%= @burger.description %></h3>
 <h3><%= @burger.price %></h3>
 <h3><%= @burger.restaurant.name %></h3>
-<% binding.pry %>
 <% if @burger.image_url %>
   <%= image_tag @burger.image_url, id: "burger_image"%>
 <% end %>
