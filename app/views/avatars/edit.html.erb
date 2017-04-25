@@ -1,0 +1,7 @@
+<div>
+  <%=form_for @user do |f| %>
+    <%= f.label :avatar, "Photo" %>
+    <%= f.file_field :avatar  %>
+    <%= f.submit "Update User Photo" %>
+  <% end %>
+</div>

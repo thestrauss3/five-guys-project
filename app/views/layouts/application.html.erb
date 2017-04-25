@@ -12,15 +12,25 @@
   </head>
   <header>
     <div class="row">
-      <div class="links small-6 columns">
+      <div class="links small-5 columns">
         <%= link_to 'Home', root_path %>
         <%= link_to 'Burgers', burgers_path %>
         <%= link_to 'Restaurants', restaurants_path %>
         <input type="text" name="search" class="search" placeholder="Search..">
-
       </div>
-      <div class="text-right small-6 columns">
+      <div class="flashy small-4 columns centered-align">
+
+          <% flash.each do |kind, message| %>
+          <p><%= message %></p>
+          <% end %>
+      </div>
+      <div class="text-right small-3 columns">
         <% if current_user.present? %>
+          <% if current_user.avatar.present? %>
+            <%= image_tag(current_user.avatar.url, size: "75x75", class: 'avatar_icon') %>
+          <% else %>
+            <%= image_tag("fallback/default.jpg", size: "75x75", class: 'avatar_icon') %>
+          <% end %>
           <span><%= link_to current_user.username, user_path(current_user) %><span>
           <span><%= link_to "Log Out", destroy_user_session_path, :method => :delete %><span></br>
         <% else %>
@@ -35,11 +45,6 @@
       <div class="small-9 columns">
         <h1 id="title">Nine to Five Guys</h1>
         <div class="main" id="app">
-          <div>
-            <% flash.each do |kind, message| %>
-              <p><%= message %></p>
-            <% end %>
-          </div>
         </div>
         <%= yield %>
       </div>
