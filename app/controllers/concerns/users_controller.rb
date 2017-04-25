@@ -8,5 +8,16 @@ class UsersController < ApplicationController
      redirect_to new_user_session_path
    end
  end
- 
+
+ def update
+  if params[:user][:avatar].present?
+    @user= current_user
+    redirect_to user_path(current_user)
+    flash[:notice] = "Avatar successfully saved!"
+  else
+    redirect_to user_path(current_user)
+    flash[:error]= "What did you do?!"
+  end
+ end
+
 end

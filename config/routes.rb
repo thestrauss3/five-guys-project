@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [:show]
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :update] do
+    resources :avatars, only: [:edit, :update]
+  end
+
   resources :admin, only: [:show]
 
   # post 'burgers' => 'burgers/new'

@@ -4,6 +4,9 @@ class User < ApplicationRecord
   has_many :burgers
   has_many :reviews
 
+  # testing CarrierWave
+  mount_uploader :avatar, AvatarUploader
+
   validates :username, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
