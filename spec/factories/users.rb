@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :user do
-    email {"925guys@gmail.com"}
+    email {"nine2fiveguys@gmail.com"}
     username {"GoldenKingdom"}
     first_name {"Monkey"}
     last_name {"King"}
