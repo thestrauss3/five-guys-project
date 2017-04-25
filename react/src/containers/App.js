@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
-import BurgerIndex from '../components/BurgerIndex';
+import BurgersContainer from '../containers/BurgersContainer';
+import BurgerContainer from '../containers/BurgerContainer';
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class App extends Component {
       <h1>show</h1>
       <Router history={browserHistory}>
         <Route path='/'>
-          <Route path='/burgers' component={BurgerIndex} />
+          <Route path='/burgers' component={BurgersContainer} />
+          <Route path="/burgers/:id" component={BurgerContainer} />
         </Route>
       </Router>
 
