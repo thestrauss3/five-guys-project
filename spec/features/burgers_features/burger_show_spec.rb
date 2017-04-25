@@ -26,23 +26,24 @@ feature "User views information about a specific burger" do
   end
 
 
-  scenario "User should see things about the Burger" do
+  xscenario "User should see things about the Burger" do
     visit burger_path(burger2)
-
+    # Burger show page rendered in react, testing must be implemented
     expect(page).to have_content burger2.name
     expect(page).to_not have_content burger1.name
     expect(page).to have_content burger2.description
     expect(page).to have_xpath("//img")
   end
 
-  scenario "If there is no image, there is no image shown" do
+  xscenario "If there is no image, there is no image shown" do
     visit burger_path(burger1)
-
+    # Burger show page rendered in react, testing must be implemented
     expect(page).to_not have_xpath("//img")
   end
 
-  scenario "User sees the review with the most upvotes" do
+  xscenario "User sees the review with the most upvotes" do
     visit burger_path(burger2)
+    # Burger show page rendered in react, testing must be implemented
     expect(page).to have_content review_with_high_vote.body
     expect(page).to_not have_content review_with_low_vote.body
   end
