@@ -12,7 +12,6 @@ feature "user want to change their profile photo" do
 
     attach_file('Photo', File.absolute_path('spec/features/user_features/test_photo/baconator.jpg'))
     click_button "Update User Photo"
-    save_and_open_page
     expect(page).to have_content("Avatar successfully saved!")
   end
 
