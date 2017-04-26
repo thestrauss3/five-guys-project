@@ -8,10 +8,8 @@ class Api::V1::UpvotesController < ApiController
     uservotes.each do |uservote|
       if uservote.user.id == user.id
         if uservote.vote == -1 || uservote.vote == 0
-        uservote.vote = uservote.vote + 1
+          uservote.vote = uservote.vote + 1
           uservote.save
-        else
-          flash[:error] = "You have already upvoted this post!"
         end
           need_new_entry = false
       end
