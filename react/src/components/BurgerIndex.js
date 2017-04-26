@@ -35,24 +35,23 @@ class BurgerIndex extends Component {
   }
 
   render() {
-    let burgers;
-
-    if (this.state.burgers) {
-      burgers = this.state.burgers.map(burger => {
-        return(
-          <h4>
-            <li>{burger.name}</li>
-          </h4>
-        )
-      })
+      let burgers;
+      if (this.state.burgers) {
+        burgers = this.state.burgers.map(burger => {
+          return(
+            <h4>
+              <li><Link to={`/burgers/${burger.id}`}>{burger.name}</Link></li>
+            </h4>
+          )
+        })
+      }
+      return (
+        <div>
+         <h1>All Burgers:</h1>
+         {burgers}
+        </div>
+      )
     }
-    return (
-      <div>
-       <h1>look et teh burgrz:</h1>
-       {burgers}
-      </div>
-    )
   }
-}
 
-export default BurgerIndex;
+  export default BurgerIndex;

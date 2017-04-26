@@ -13,6 +13,10 @@
   list-style-type: none;
 }
 
+.rating {
+  padding-bottom: 50px;
+}
+
 .upvote, .downvote {
   font-size: 30px;
 }
@@ -21,12 +25,16 @@
   -webkit-transform: scale(1.5);
   -ms-transform: scale(1.5);
   transform: scale(1.5);
-  color: green;
+  color: $primary-green;
 }
 
 .downvote:hover {
   -webkit-transform: scale(1.5);
   -ms-transform: scale(1.5);
   transform: scale(1.5);
-  color: red;
+  color: $primary-red;
+}
+
+.hidden {
+  display:none
 }

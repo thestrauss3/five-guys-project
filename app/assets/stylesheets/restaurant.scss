@@ -1,6 +1,9 @@
 $primary-green: #008000;
 $primary-white: #f0f0f0;
 $primary-black: #0A0310;
+$primary-yellow: #F9BA15;
+$primary-red: #FF0000;
+$primary-grey: #848484;
 
 body {
   background-blend-mode: screen;
@@ -24,7 +27,7 @@ a {
 }
 
 a:hover {
-  color: #F9BA15;
+  color: $primary-yellow;
   cursor: image-url('cursorburger.png'), default;
 }
 
@@ -38,7 +41,7 @@ a:hover {
   background-blend-mode: screen;
   background-color: $primary-white;
   background-image: image-url("burger-wallpaper.jpg");
-  border: 1px solid #848484;
+  border: 1px solid $primary-grey;
   margin-top: 30px;
   margin-left: 80px;
   margin-right: 80px;
