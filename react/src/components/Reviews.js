@@ -21,12 +21,20 @@ class Reviews extends Component {
         this.setState({
           totalVotes: totalVotes
         });
-  })
+      })
     let upVote = this.state.count + 1
     this.setState({ count: upVote})
   }
 
   onClickDownVote(){
+    let reviewId = this.props.id
+    fetch(`/api/v1/downvotes/${reviewId}`, {credentials: 'same-origin'})
+      .then(response => response.json())
+      .then(totalVotes => {
+        this.setState({
+          totalVotes: totalVotes
+        });
+      })
     let downVote = this.state.count - 1
     this.setState({ count: downVote})
   }
@@ -36,10 +44,9 @@ class Reviews extends Component {
     return (
       <div className="row">
         <div className="columns small-3">
-          <h4>Review Score: {this.state.count}</h4>
-          <button onClick={this.onClickUpVote} >▲</button><br/>
-          <button onClick={this.onClickDownVote} >▼</button>
-          <h3>Total Votes: {this.state.totalVotes}</h3>
+        <h3>Total Votes: {this.state.totalVotes}</h3>
+          <center><button className="upvote" onClick={this.onClickUpVote} >▲</button></center><br/>
+          <center><button className="downvote" onClick={this.onClickDownVote} >▼</button></center>
         </div>
         <div className="columns small-9">
           <h2>{this.props.body}</h2>

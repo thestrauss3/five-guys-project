@@ -12,3 +12,21 @@
 .review_tile li {
   list-style-type: none;
 }
+
+.upvote, .downvote {
+  font-size: 30px;
+}
+
+.upvote:hover {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+  color: green;
+}
+
+.downvote:hover {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+  color: red;
+}
