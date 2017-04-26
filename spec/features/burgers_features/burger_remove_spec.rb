@@ -11,7 +11,7 @@ feature "user deletes burger submission" do
 
 
       click_link ("x")
-
+      expect(page).to_not have_content burger.name
       expect(page).to have_content ("Burger Deleted")
 
   end
