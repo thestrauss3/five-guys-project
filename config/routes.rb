@@ -25,4 +25,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :uservotes
+    end
+  end
+
 end

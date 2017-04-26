@@ -1,14 +1,24 @@
-<h1 class="title">Review for <%= @burger.name %></h1>
-
+<div id="votes">
+</div>
+  <h1 class="title">Review for <%= @burger.name %></h1>
+<!-- <div>
   <% @reviews.each do |r| %>
-  <ul class=review_tile>
-    <li class="review_username">Reviewed by: USER NAME</li>
+    <div class=row>
+      <div class="rating columns small-3">
+        <h4>upvote</h4><br />
+        <h4>downvote</h4>
+      </div>
+      <div class="text-left">
+        <ul class=review_tile>
+          <li class="review_username">Reviewed by: USER NAME</li>
 
-    <li class="burger_rating">Burger rating: <%= r.burger_rating %> stars</li>
+          <li class="burger_rating">Burger rating: <%= r.burger_rating %> stars</li>
 
-    <li class="review_rating">Review score: <%= r.review_rating %></li>
-    <br/>
-    <li class="review_body"><%= r.body %></li>
-
-  </ul>
+          <li class="review_rating">Review score: <%= r.review_rating %></li>
+          <br/>
+          <li class="review_body"><%= r.body %></li>
+        </ul>
+      </div>
+    </div>
   <% end %>
+</div> -->

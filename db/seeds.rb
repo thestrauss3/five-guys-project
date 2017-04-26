@@ -21,7 +21,7 @@ user= User.create(email: "user@gmail.com", password: "123456", username: "Misty"
   FactoryGirl.create(:restaurant, name: name, location: location, description: description)
 end
 Restaurant.all.each do |r|
-  1.times do
+  3.times do
     price = Faker::Number.between(1,20)
     url = "baconator.jpg"
     description = Faker::Food.ingredient + Faker::Food.ingredient + Faker::Food.ingredient + " BURGER DESCRIPTION"
@@ -31,7 +31,7 @@ Restaurant.all.each do |r|
 end
 
 Burger.all.each do |b|
-  1.times do
+  3.times do
     rating = Faker::Number.between(1,5)
     body = Faker::ChuckNorris.fact + " REVIEW BODY"
     FactoryGirl.create(:review, burger: b, burger_rating: rating, body: body, user: user)

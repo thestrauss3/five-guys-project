@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :burgers
   has_many :reviews
+  has_many :uservotes
+  
 
   # testing CarrierWave
   mount_uploader :avatar, AvatarUploader
