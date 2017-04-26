@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   end
 
   root 'static_pages#index'
-  resources :burgers, only: [:index, :show] do
+  resources :burgers, only: [:index, :show , :destroy] do
     resources :reviews, only: [:index, :new, :create]
   end
   resources :reviews, only: [:show]
 
-  resources :users, only: [:show, :edit, :update] do
+  resources :users, only: [:show, :edit, :update, :destroy] do
     resources :avatars, only: [:edit, :update]
   end
 
