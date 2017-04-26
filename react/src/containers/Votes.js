@@ -22,22 +22,22 @@ class Votes extends Component {
     let splitPathUrl = pathUrl.split("/")
     let burgerId = splitPathUrl[2]
     fetch(`/api/v1/uservotes/${burgerId}`)
-      // .then(response => {
-      //   if (response.ok) {
-      //     return response;
-      //   } else {
-      //     let errorMessage = `${response.status} (${response.statusText})`,
-      //         error = new Error(errorMessage);
-      //     throw(error);
-      //   }
-      // })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+              error = new Error(errorMessage);
+          throw(error);
+        }
+      })
       .then(response => response.json())
       .then(reviews => {
         this.setState({
           reviews: reviews
         });
       })
-      // .catch(error => console.error(`Error in fetch: ${error.message}`));
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
