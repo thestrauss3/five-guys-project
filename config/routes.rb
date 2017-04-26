@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :avatars, only: [:edit, :update]
   end
 
+  resources :searches, only: [:index]
   resources :admin, only: [:show]
 
   # post 'burgers' => 'burgers/new'
