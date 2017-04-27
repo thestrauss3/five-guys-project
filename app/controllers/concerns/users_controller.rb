@@ -22,4 +22,11 @@ class UsersController < ApplicationController
   end
  end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = "User Profile Deleted"
+    redirect_to user_path
+  end
+
 end

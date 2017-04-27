@@ -5,4 +5,8 @@ class Restaurant < ApplicationRecord
   validates :description, length: {minimum: 20}
 
   has_many :burgers
+
+  def self.search(search)
+    where("name ILIKE ?", "%#{search}%")
+  end
 end

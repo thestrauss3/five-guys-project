@@ -11,4 +11,8 @@ class Burger < ApplicationRecord
    # scenario where there were already burgers made without burger_rating
    # associated to a user
   has_many :reviews
+
+  def self.search(search)
+    where("name ILIKE ?", "%#{search}%")
+  end
 end
