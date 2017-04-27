@@ -38,7 +38,6 @@ class BurgerIndex extends Component {
       let burgers;
       if (this.state.burgers) {
         burgers = this.state.burgers.map(burger => {
-          debugger;
           return(
             <h4>
               <li className="burgerlist"><a href={`/burgers/` + burger.id}>{burger.name}</a></li>
