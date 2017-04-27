@@ -50,7 +50,7 @@ class Reviews extends Component {
         </div>
         <div className="rating columns small-9">
           <h2>{this.props.body}</h2>
-          <p>Rating: {this.props.burgerRating} burger(s)</p>
+          <p>Rating: {this.props.burgerRating}/5</p>
           <hr/>
         </div>
       </div>

@@ -1,10 +1,10 @@
 <h1><%= @restaurant.name %></h1>
-<h3><%= @restaurant.location %></h3>
-<h5> - <%= @restaurant.description %></h5>
-<ul>
-<li><%= @restaurant.dining_type %></li>
-<li><%= @restaurant.hours %></li>
-</ul>
+<h3><%= @restaurant.description %></h3>
+  <ul class='resta-items'>
+    <li><%= @restaurant.dining_type %></li>
+    <li><%= @restaurant.hours %></li>
+    <li><%= @restaurant.location %></li>
+  </ul>
 <h3>Burgers available at <%= @restaurant.name %></h3>
   <ul>
   <% @restaurant.burgers.each do |b| %>

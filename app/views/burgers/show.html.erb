@@ -1,23 +1,28 @@
-<h1><%= @burger.name %></h1>
-<h3><%= @burger.description %></h3>
+<center><h1><%= @burger.name %></h1>
+<h5>** <%= @burger.description %> **</h5>
 <p><%= @burger.restaurant.name %>: $<%= @burger.price %></p>
-<% if @burger.image_url %>
-  <%= image_tag @burger.image_url, id: "burger_image"%>
-<% end %>
-<br/><br/>
-<% unless @burger.reviews.empty? %>
-  What do other people say about this burger?
-  <%= @burger.reviews.order(:review_rating).last.body %>
-<% end %>
-<br/><hr/>
-<%= link_to "See all reviews for this burger", burger_reviews_path(@burger) %><br/>
-<%= link_to "Add a Review for this burger", new_burger_review_path(@burger) %>
 
+  <% if @burger.image_url %>
+    <%= image_tag @burger.image_url, id: "burger_image"%>
+  <% end %>
+<br/><br/>
+
+  <% unless @burger.reviews.empty? %>
+    <h3>What do other people say about this burger?</h3>
+    <div class='last-user'>
+      <p><%= @burger.reviews.order(:review_rating).last.body %></p>
+      <p>Written by user: <%= @burger.reviews.order(:review_rating).last.user.username%></p>
+    </div>
+  <% end %>
+<br/><hr/>
+
+<%= link_to "See all reviews for this burger", burger_reviews_path(@burger) %><br/>
+<%= link_to "Add a Review for this burger", new_burger_review_path(@burger) %></center>
 
 <div>
   <% if current_user.present? %>
     <% if current_user.admin %>
-      <p><%= link_to "Delete This Burger", @burger, method: :delete, data: {confirm: "Are you sure you want to delete this burger?"}%></p>
+      <p><%= link_to "Delete This Burger", @burger, method: :delete, data: {confirm: "Are you sure you want to delete this burger?"}, class: "delete"%></p>
     <%end%>
   <% end %>
 </div>

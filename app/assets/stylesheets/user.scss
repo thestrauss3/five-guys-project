@@ -13,3 +13,38 @@ $primary-white: #f0f0f0;
   font-size: 20px;
   color: $primary-white;
 }
+
+.delete {
+  color: red;
+}
+
+.deletex {
+  border-left: 1px solid $primary-grey;
+  padding-left: 10px;
+  color: red;
+}
+
+.review-title {
+  text-decoration: underline;
+  color: $primary-yellow;
+}
+
+.img-profile {
+  max-width: 640px;
+  max-height: 360px;
+  border: 2px solid $primary-green;
+  background-color: $primary-yellow;
+}
+
+.review_tile {
+  padding: 10px 30px;
+  border: 1px solid $primary-grey;
+  border-radius: 20%;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-bottom: 10px;
+}
+
+.review_tile li {
+  list-style-type: none;
+}
