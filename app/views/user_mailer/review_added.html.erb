@@ -1,0 +1,12 @@
+<%= link_to "@user.username", controller: "users", action: "show", id: @user.id, host: "localhost:3000" %>
+, A review has been submitted for your burger.
+<br/><br/>
+
+<%= link_to @burger.name, controller: "burgers", action: "show", id: @burger.id, host: "localhost:3000" %>
+<br/><br/>
+
+<%= @review.user.username %> said this about your burger:
+<br/>
+<%= @review.body %>
+<br/><br/>
+<%= link_to "See all the reviews", controller: "reviews", action: "index", burger_id: @burger.id, host: "localhost:3000" %>

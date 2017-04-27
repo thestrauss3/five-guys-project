@@ -7,7 +7,7 @@
   <% @user.burgers.each do |burger| %>
   <p><%= link_to burger.name, burger_path(burger) %></p>
   <h6><%= link_to "Edit This Burger Submission ", edit_burger_path(burger)%><%= link_to "X", burger, method: :delete, data: {confirm: "Are you sure you want to delete this burger?"}, class: "deletex"%></h6>
-  <%=image_tag((burger.image_url), class: "img-profile")%>
+    <%=image_tag((burger.image_url), class: "img-profile")%>
   <% end %>
 <hr/></div>
 

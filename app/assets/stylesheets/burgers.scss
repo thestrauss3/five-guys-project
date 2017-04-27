@@ -1,10 +1,11 @@
 // Place all the styles related to the Burgers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$primary-yellow: #F9BA15;
+
 #burger_image {
   max-width: 200px;
   max-height: 200px;
-  background-color: cyan;
 }
 .title {
   text-align: center;
@@ -17,6 +18,18 @@
 
 .last-user {
   font-size: 15px;
-  border: 1px dashed lightgrey;
+  border: 1px dashed $primary-yellow;
   margin: 0px 100px;
+}
+
+.img-burg {
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+.burger-react {
+  text-align: center;
 }
