@@ -3,7 +3,7 @@
 <p><%= @burger.restaurant.name %>: $<%= @burger.price %></p>
 
   <% if @burger.image_url %>
-    <%= image_tag @burger.image_url, id: "burger_image"%>
+    <%= image_tag @burger.image_url, class: "img-profile"%>
   <% end %>
 <br/><br/>
 
