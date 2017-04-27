@@ -45,5 +45,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  @images = Dir.glob("some/local/path/*.jpeg")
+  @images.each do |i|
+    id=File.basename(i).gsub('.jpeg','');
+    t=Product.where(id:id).first;
+    t.images=[Pathname.new(i).open];
+  end
 
 end

@@ -42,7 +42,6 @@ a:hover {
   background-color: $primary-white;
   background-image: image-url("burger-wallpaper.jpg");
   border: 1px solid $primary-grey;
-  margin-top: 30px;
   margin-left: 80px;
   margin-right: 80px;
   padding: 10px 10px 200px;
@@ -61,6 +60,17 @@ a:hover {
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
   width: 270px;
+}
+
+.submit {
+  font-weight: bolder;
+  color: $primary-green;
+  background: transparent;
+}
+
+.submit:hover {
+  background-color: $primary-green;
+  color: $primary-white;
 }
 
 #homelogo {

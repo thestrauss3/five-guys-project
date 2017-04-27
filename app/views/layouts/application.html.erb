@@ -18,8 +18,8 @@
         <%= link_to 'Restaurants', restaurants_path %>
         <div class="">
           <%= form_tag(searches_path, :method => "get", id: "search-form") do %>
-            <%=text_field_tag :search, params[:search], placeholder: "Search burger or restaurants" %>
-            <%= submit_tag "Search" %>
+            <%=text_field_tag :search, params[:search], placeholder: "Search burger or restaurants", class: "search" %>
+            <%= submit_tag "Search", class: "hidden" %>
           <% end %>
         </div>
       </div>

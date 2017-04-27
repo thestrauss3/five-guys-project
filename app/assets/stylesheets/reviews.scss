@@ -18,7 +18,11 @@
 }
 
 .upvote, .downvote {
-  font-size: 30px;
+  font-size: 25px;
+}
+
+.downvote {
+  margin-top: 5px;
 }
 
 .upvote:hover {

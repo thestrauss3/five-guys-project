@@ -1,13 +1,14 @@
 <h1><%= @restaurant.name %></h1>
-
 <h3><%= @restaurant.location %></h3>
-<h3><%= @restaurant.description %></h3>
-<h3><%= @restaurant.dining_type %></h3>
-<h3><%= @restaurant.hours %></h3>
+<h5> - <%= @restaurant.description %></h5>
+<ul>
+<li><%= @restaurant.dining_type %></li>
+<li><%= @restaurant.hours %></li>
+</ul>
 <h3>Burgers available at <%= @restaurant.name %></h3>
   <ul>
   <% @restaurant.burgers.each do |b| %>
     <li><%= link_to b.name, burger_path(b) %></li>
   <% end %>
   </ul>
-<h3><%= link_to "Add a new burger to this restaurant", new_restaurant_burger_path(@restaurant) %></h3>
+<hr/><h3><%= link_to "Add a new burger to this restaurant", new_restaurant_burger_path(@restaurant) %></h3>
