@@ -29,7 +29,7 @@ feature "User views information about a specific burger" do
   end
 
 
-  scenario "User should see things about the Burger" do
+  scenario "User should see things about the burger" do
     visit burger_path(burger2)
 
     expect(page).to have_content burger2.name
