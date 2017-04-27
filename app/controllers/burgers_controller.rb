@@ -53,11 +53,15 @@ class BurgersController < ApplicationController
       @burger.reviews.destroy_all
       @burger.destroy
       flash[:success] = "Burger Deleted"
-      redirect_to user_path(current_user)
+      if current_user.admin
+        redirect_to burgers_path
+      else
+        redirect_to user_path(current_user)
+      end
   end
 
   private
-  
+
   def burger_params
     params.require(:burger).permit(
       :name,
