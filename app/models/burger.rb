@@ -5,8 +5,14 @@ class Burger < ApplicationRecord
 
   belongs_to :restaurant
   belongs_to :user, optional: true
+  mount_uploader :image_url, AvatarUploader
+
    #had to use optional condition to make tests pass in the
    # scenario where there were already burgers made without burger_rating
    # associated to a user
   has_many :reviews
+
+  def self.search(search)
+    where("name ILIKE ?", "%#{search}%")
+  end
 end
