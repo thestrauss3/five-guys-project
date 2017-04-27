@@ -2,6 +2,7 @@ Restaurant.destroy_all
 Burger.destroy_all
 User.destroy_all
 Review.destroy_all
+
 five_guys = Restaurant.create(name: "Five Guys", location: "Boston, MA", dining_type: "Fast Food", description: "Literally known as the heaven for burgers.", hours: "11AM-10PM")
 wendys = Restaurant.create(name: "Wendys", location: "Boston, MA", dining_type: "Fast Food", description: "Home of the Baconator, the Double Stack, and many more. Also known for its shakes.", hours: "10AM-9PM")
 b_good = Restaurant.create(name: "B.good", location: "Boston, MA", dining_type: "Fast Food", description: "Counter-serve chain featuring health-conscious versions of fast-food favorites.", hours: "7AM-9PM")

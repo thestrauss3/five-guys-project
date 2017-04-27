@@ -2,11 +2,22 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/App';
-import BurgerIndex from './components/BurgerIndex';
+import Votes from './containers/Votes';
 
 $(function() {
-  ReactDOM.render(
+  let appElement = document.getElementById('app')
+  if (appElement) {
+    ReactDOM.render(
     <App />,
-    document.getElementById('app')
-  );
-});
+    appElement
+  )}
+})
+
+$(function() {
+  let voteElement = document.getElementById('votes')
+  if (voteElement) {
+    ReactDOM.render(
+    <Votes />,
+    voteElement
+  )}
+})
