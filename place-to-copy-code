@@ -1,0 +1,15 @@
+componentDidMount() {
+    fetch('/api/v1/shows.json', {credentials: 'same-origin'})
+      .then((response) => response.json())
+      .then((responseData) => {
+        this.setState({shows: responseData.shows, current_user: responseData.current_user});
+      });
+  }
+  def index
+    @shows = Show.all
+    @current_user = current_user
+    binding.pry
+    respond_to do |format|
+      format.json  { render :json => {:shows => @shows, :current_user => @current_user }}
+    end
+  end

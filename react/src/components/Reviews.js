@@ -7,7 +7,7 @@ class Reviews extends Component {
     super(props);
     this.state = {
       count: this.props.reviewRating,
-      totalVotes: 0
+      totalVotes: this.props.reviewRating
     };
     this.onClickUpVote = this.onClickUpVote.bind(this);
     this.onClickDownVote = this.onClickDownVote.bind(this);

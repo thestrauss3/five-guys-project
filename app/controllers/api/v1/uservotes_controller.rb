@@ -7,17 +7,23 @@ class Api::V1::UservotesController < ApiController
 
   def show
     burger = Burger.find(params[:id])
-    @reviews = burger.reviews
-    # @reviews.each do |review|
-    #   review.uservotes .each do |uservotes|
-    #     @totalVotes += uservotes
-    #   end
-    # end
-
-    # binding.pry
+    @reviews=burger.reviews
+    @reviews.each do |review|
+      total_votes= review.total_vote_count
+      review.review_rating = total_votes
+      # binding.pry
+      review.save
+      # review.update_attribute(review_rating: total_votes)
+    end
     render json: @reviews
-    # render json: {@reviews, @totalvotes}
 
+    # @reviews = burger.reviews
+    # @review_total_votes = []
+    # @reviews.each do |review|
+    #   @review_total_votes << [review.id, review.total_vote_count]
+    # end
+    # # binding.pry
+    # render json: {:reviews => @reviews, :reviewTotalVotes => @review_total_votes}
   end
 
 
