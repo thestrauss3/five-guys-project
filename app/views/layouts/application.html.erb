@@ -16,7 +16,12 @@
         <%= link_to 'Home', root_path %>
         <%= link_to 'Burgers', burgers_path %>
         <%= link_to 'Restaurants', restaurants_path %>
-        <input type="text" name="search" class="search" placeholder="Search..">
+        <div class="">
+          <%= form_tag(searches_path, :method => "get", id: "search-form") do %>
+            <%=text_field_tag :search, params[:search], placeholder: "Search burger or restaurants" %>
+            <%= submit_tag "Search" %>
+          <% end %>
+        </div>
       </div>
       <div class="flashy small-4 columns centered-align">
 

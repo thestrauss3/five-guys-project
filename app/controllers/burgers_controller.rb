@@ -32,6 +32,13 @@ class BurgersController < ApplicationController
     end
   end
 
+  def destroy
+      @burger = Burger.find(params[:id])
+      @burger.reviews.destroy_all
+      @burger.destroy
+      flash[:success] = "Burger Deleted"
+      redirect_to user_path(current_user)
+  end
   private
 
   def burger_params
