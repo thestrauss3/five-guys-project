@@ -55,8 +55,9 @@ class BurgersController < ApplicationController
       flash[:success] = "Burger Deleted"
       redirect_to user_path(current_user)
   end
-  private
 
+  private
+  
   def burger_params
     params.require(:burger).permit(
       :name,
