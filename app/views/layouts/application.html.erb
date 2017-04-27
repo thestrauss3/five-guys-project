@@ -16,6 +16,13 @@
         <%= link_to 'Home', root_path %>
         <%= link_to 'Burgers', burgers_path %>
         <%= link_to 'Restaurants', restaurants_path %>
+        <div>
+          <% if current_user.present? %>
+            <% if current_user.admin %>
+              <%= link_to "Admin Page", users_path%>
+            <%end%>
+          <% end %>
+        </div>
         <div class="">
           <%= form_tag(searches_path, :method => "get", id: "search-form") do %>
             <%=text_field_tag :search, params[:search], placeholder: "Search burger or restaurants", class: "search" %>
