@@ -10,20 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426140224) do
+ActiveRecord::Schema.define(version: 20170427180108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "burgers", force: :cascade do |t|
-    t.string   "name",          null: false
-    t.text     "description",   null: false
+    t.string   "name",                       null: false
+    t.text     "description",                null: false
     t.string   "price"
     t.string   "image_url"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "restaurant_id"
     t.integer  "user_id"
+    t.integer  "average_rating", default: 0
   end
 
   create_table "restaurants", force: :cascade do |t|
