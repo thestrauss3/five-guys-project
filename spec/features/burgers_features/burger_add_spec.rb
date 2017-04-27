@@ -25,7 +25,7 @@ feature "User visits new burger page" do
     fill_in 'Name', with: "Double Garlic Steak Burger"
     fill_in 'Price', with: 4
     fill_in 'Description', with: "This burger is so good, you will want to eat five of them!"
-    attach_file('Photo', File.absolute_path('spec/features/user_features/test_photo/baconator.jpg'))
+    fill_in 'Photo', with: "https://c1.staticflickr.com/3/2276/2448286280_214573dfed_z.jpg?zz=1"
 
 
     click_button 'Add Burger'
