@@ -7,7 +7,7 @@
     <% @top_three_burgers.each do |burger| %>
     <div class="small-4 columns">
       <p><%= link_to burger.name, burger_path(burger) %></p>
-      <%= image_tag burger.image_url, size:"250x250" %>
+      <%= image_tag burger.image_url, size:"250x250", class: "img-burg" %>
       Average Rating: <%= burger.average_rating %>
     </div>
     <% end %>
@@ -22,7 +22,7 @@
     <% @random_burgers.each do |burger| %>
     <div class="small-4 columns">
       <p><%= link_to burger.name, burger_path(burger) %></p>
-      <%= image_tag burger.image_url, size:"250x250" %>
+      <%= image_tag burger.image_url, size:"250x250", class: "img-burg" %>
     </div>
     <% end %>
   </div>
