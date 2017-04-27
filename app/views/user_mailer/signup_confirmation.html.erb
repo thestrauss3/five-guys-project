@@ -1,0 +1,5 @@
+<%= @user.username %>,
+
+Thank you for signing up.
+
+<%= link_to "Your profile page", controller: "users", action: "show", id: @user.id, host: "localhost:3000" %>
