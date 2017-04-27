@@ -12,7 +12,6 @@ class App extends Component {
   render() {
     return (
       <div>
-      <h1>show</h1>
       <Router history={browserHistory}>
         <Route path='/'>
           <Route path='/burgers' component={BurgerIndex} />
