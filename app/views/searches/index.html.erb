@@ -1,0 +1,21 @@
+<h1>Search Function!</h1>
+
+<% if @blank_message %>
+  <h3><%=@blank_message %></h3>
+<% end %>
+
+<% if @restaurants %>
+  <ul class="restaurant-list">
+    <% @restaurants.each do |restaurant| %>
+      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+      <% end %>
+  </ul>
+<% end %>
+
+<% if @burgers %>
+  <ul class="burger-list">
+    <% @burgers.each do |burger| %>
+      <li><%= link_to burger.name, burger_path(burger) %></li>
+    <% end %>
+  </ul>
+<% end %>
