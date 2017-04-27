@@ -7,7 +7,8 @@ class Votes extends Component {
     super(props);
     this.state = {
       reviews:[],
-      votes: ''
+      votes: '',
+      totalVotes: []
     };
 
     this.getVoteData = this.getVoteData.bind(this);
