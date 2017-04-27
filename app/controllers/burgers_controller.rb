@@ -32,6 +32,22 @@ class BurgersController < ApplicationController
     end
   end
 
+  def edit
+    @burger = Burger.find(params[:id])
+  end
+
+  def update
+    @burger = Burger.find(params[:id])
+    @burger.update_attributes(burger_params)
+    if @burger.save
+      flash[:success] = 'Burger successfully edited!'
+      redirect_to burger_path(@burger)
+    else
+      @errors = @burger.errors.full_messages
+      render :new
+    end
+  end
+
   def destroy
       @burger = Burger.find(params[:id])
       @burger.reviews.destroy_all
@@ -39,8 +55,9 @@ class BurgersController < ApplicationController
       flash[:success] = "Burger Deleted"
       redirect_to user_path(current_user)
   end
-  private
 
+  private
+  
   def burger_params
     params.require(:burger).permit(
       :name,

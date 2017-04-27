@@ -1,5 +1,4 @@
 class SearchesController < ApplicationController
-
   def index
     if params[:search] == ""
       @blank_message = "You have submitted a empty query"
@@ -11,5 +10,4 @@ class SearchesController < ApplicationController
       end
     end
   end
-
 end
