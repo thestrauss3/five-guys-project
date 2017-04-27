@@ -36,7 +36,4 @@ feature "User visits the review index page" do
     expect(page).to have_content first_review.burger_rating
     expect(page).to have_content highest_rated_review.review_rating
   end
-
-  xscenario "User can sort reviews by newest, highest rated, most upvotes" do
-  end
 end

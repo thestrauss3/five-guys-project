@@ -44,13 +44,13 @@ class Reviews extends Component {
     return (
       <div className="row">
         <div className="columns small-3">
-        <h3>Total Votes: {this.state.totalVotes}</h3>
-          <center><button className="upvote" onClick={this.onClickUpVote} >▲</button></center><br/>
-          <center><button className="downvote" onClick={this.onClickDownVote} >▼</button></center>
+        <center><h5>Review Score: {this.state.totalVotes}</h5>
+          <button className="upvote" onClick={this.onClickUpVote} >▲</button><br/>
+          <button className="downvote" onClick={this.onClickDownVote} >▼</button></center>
         </div>
         <div className="rating columns small-9">
           <h2>{this.props.body}</h2>
-          <p>Rating: {this.props.burgerRating} burger(s)</p>
+          <p>Rating: {this.props.burgerRating} burger(s)</p><img src={require("./app/assets/images/925logo.png")}/>
           <hr/>
         </div>
       </div>
