@@ -1,6 +1,7 @@
 require "rails_helper"
 
 feature "user visits the index page" do
+
   scenario "user visits root page to sign up or log in" do
     visit root_path
     expect(page).to have_content "Sign Up"  #might bee expect link Sign_up

@@ -1,5 +1,29 @@
-<div>
-  <h1>Home Page </h1>
-  <h1>Nine to Five Guys</h1>
-  <h3>Nine Burgers to Know</h3>
-</div>
+  <div class="row">
+    <div class="small-12 small-centered columns text-center">
+      <h1>Top Rated Burgers!</h1>
+    </div>
+  </div>
+  <div class="row text-center">
+    <% @top_three_burgers.each do |burger| %>
+    <div class="small-4 columns">
+      <p><%= link_to burger.name, burger_path(burger) %></p>
+      <%= image_tag burger.image_url, size:"250x250" %>
+      Average Rating: <%= burger.average_rating %>
+    </div>
+    <% end %>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="small-12 small-centered columns text-center">
+      <h1>Try a Random Burger!</h1>
+    </div>
+  </div>
+  <div class="row text-center">
+    <% @random_burgers.each do |burger| %>
+    <div class="small-4 columns">
+      <p><%= link_to burger.name, burger_path(burger) %></p>
+      <%= image_tag burger.image_url, size:"250x250" %>
+    </div>
+    <% end %>
+  </div>
+  <hr>
