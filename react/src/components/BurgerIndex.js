@@ -41,9 +41,9 @@ class BurgerIndex extends Component {
       if (this.state.burgersFirstHalf) {
         burgersFirstHalf = this.state.burgersFirstHalf.map(burger => {
           return(
-            <h4>
-              <li className="burgerlist"><a href={`/burgers/` + burger.id}>{burger.name}</a></li>
-            </h4>
+            <div>
+              <p className="burgerlist"><a href={`/burgers/` + burger.id}>{burger.name}</a></p>
+            </div>
           )
         })
       }
@@ -52,9 +52,9 @@ class BurgerIndex extends Component {
       if (this.state.burgersSecondHalf) {
         burgersSecondHalf = this.state.burgersSecondHalf.map(burger => {
           return(
-            <h4>
-              <li className="burgerlist"><a href={`/burgers/` + burger.id}>{burger.name}</a></li>
-            </h4>
+            <div>
+              <p className="burgerlist"><a href={`/burgers/` + burger.id}>{burger.name}</a></p>
+            </div>
           )
         })
       }
