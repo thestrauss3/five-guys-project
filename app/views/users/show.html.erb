@@ -1,10 +1,13 @@
 <center>
 <h1>Hi there <%= @user.username %>! </h1>
+<<<<<<< HEAD
 <% if current_user.avatar.present? %>
 <%= image_tag(current_user.avatar.url, size: "75x75", class: 'avatar_icon') %>
 <% else %>
 <%= image_tag("fallback/default.jpg", size: "75x75", class: 'avatar_icon') %>
 <% end %>
+=======
+>>>>>>> 0961bfc816937ddaccaa6294e186d9fd0d3cca12
 <p><%= link_to "Add a profile picture!", edit_user_avatar_path(@user) %></p><hr/>
 
 <div class = "burger_submit">

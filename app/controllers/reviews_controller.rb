@@ -19,7 +19,9 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.burger = @burger
     @review.user = current_user
+    burger_owner = @burger.user
     if @review.save
+      UserMailer.review_added(burger_owner, @burger, @review).deliver
       flash[:notice] = "Review submitted successfully!"
       redirect_to burger_reviews_path(@burger)
     else

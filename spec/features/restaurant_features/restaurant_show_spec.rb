@@ -10,15 +10,19 @@ feature "User visits a specific restaurant page" do
     hours: "closed")
   end
   let!(:restaurant2) { FactoryGirl.create(:restaurant) }
+  let!(:burger1_owner) {FactoryGirl.create(:user) }
+  let!(:burger2_owner) {FactoryGirl.create(:user, email: '925guys@gmail.com') }
   let!(:burger1) do
     FactoryGirl.create(:burger,
     restaurant: restaurant1,
-    name: "good burger")
+    name: "good burger",
+    user: burger1_owner)
   end
   let!(:burger2) do
     FactoryGirl.create(:burger,
     restaurant: restaurant2,
-    name: "Awesome burger")
+    name: "Awesome burger",
+    user: burger2_owner)
   end
 
   scenario "User can click on the name of a restaurant to go to its page" do
