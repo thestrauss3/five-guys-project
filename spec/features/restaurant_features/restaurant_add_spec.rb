@@ -1,7 +1,11 @@
 require "rails_helper"
 
 feature "User can click a link from restaurant index to add a new restaurant" do
+
+  let!(:user1) { FactoryGirl.create(:user) }
+
   scenario "user sees link to add a restaurant" do
+    login_as(user1, :scope => :user)
     visit restaurants_path
     expect(page).to have_content("Restaurant not on our list? Add one to the list!")
 
@@ -10,6 +14,7 @@ feature "User can click a link from restaurant index to add a new restaurant" do
   end
 
   scenario "user visits on restaurant form page" do
+    login_as(user1, :scope => :user)
     visit new_restaurant_path
     fill_in 'Name', with: "Wendys"
     fill_in 'Location', with: "Boston"
@@ -23,6 +28,8 @@ feature "User can click a link from restaurant index to add a new restaurant" do
   end
 
   scenario "user trys to submit an incomplete form" do
+    login_as(user1, :scope => :user)
+
     visit new_restaurant_path
     click_button "Add Restaurant"
 
