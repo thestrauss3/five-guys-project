@@ -11,7 +11,7 @@
 <%= form_for [@burger, @review] do |f| %>
   <div class="field">
     <%= f.label :burger_rating, "Rating" %><br/>
-    <%= f.number_field :burger_rating %>
+    <%= f.number_field :burger_rating, min: 1, max: 5 %>
   </div>
 
   <div class="field">

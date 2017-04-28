@@ -1,5 +1,10 @@
 <center>
 <h1>Hi there <%= @user.username %>! </h1>
+<% if current_user.avatar.present? %>
+<%= image_tag(current_user.avatar.url, size: "75x75", class: 'avatar_icon') %>
+<% else %>
+<%= image_tag("fallback/default.jpg", size: "75x75", class: 'avatar_icon') %>
+<% end %>
 <p><%= link_to "Add a profile picture!", edit_user_avatar_path(@user) %></p><hr/>
 
 <div class = "burger_submit">
@@ -8,6 +13,7 @@
   <p><%= link_to burger.name, burger_path(burger) %></p>
   <h6><%= link_to "Edit This Burger Submission ", edit_burger_path(burger)%><%= link_to "X", burger, method: :delete, data: {confirm: "Are you sure you want to delete this burger?"}, class: "deletex"%></h6>
     <%=image_tag((burger.image_url), class: "img-profile")%>
+    <hr/>
   <% end %>
 <hr/></div>
 

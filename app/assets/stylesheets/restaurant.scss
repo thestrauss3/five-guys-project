@@ -4,6 +4,7 @@ $primary-black: #0A0310;
 $primary-yellow: #F9BA15;
 $primary-red: #FF0000;
 $primary-grey: #848484;
+@import url('https://fonts.googleapis.com/css?family=Artifika');
 
 body {
   background-blend-mode: screen;
@@ -33,24 +34,24 @@ a:hover {
 }
 
 #title {
-  font-family: "Futura";
+  font-family: 'Artifika', serif;
+  color: $primary-black;
   font-size: 80px;
   text-align: center;
-  text-shadow: 6px 6px 5px #888888;
+  text-shadow: 4px 4px 2px $primary-grey;
 }
 
 .main {
   background-blend-mode: screen;
   background-color: $primary-white;
   background-image: image-url("burger-wallpaper.jpg");
-  border: 3px solid black;
+  border: 3px solid $primary-black;
   border-radius: 25px;
   margin-left: 80px;
   margin-right: 80px;
   margin-bottom: 50px;
   padding: 10px 10px 200px;
-  box-shadow: 10px 10px 5px #888888;
-
+  box-shadow: 10px 10px 5px $primary-grey;
 }
 
 .search {
@@ -67,29 +68,11 @@ a:hover {
   width: 270px;
 }
 
-.submit {
-  font-weight: bolder;
-  color: $primary-green;
-  background: transparent;
-}
-
-.submit:hover {
-  background-color: $primary-green;
-  color: $primary-white;
-}
-
-#homelogo {
-  margin-top: 30px;
-}
-
 .loginbox {
   margin-top: 25px;
 }
 
-
-
-.resta-items {
-  margin-left: 60px;
+ul.resta-items {
 }
 
 .restaurant-list{
