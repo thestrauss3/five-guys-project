@@ -2,13 +2,14 @@ require "rails_helper"
 
 feature "User visits the new review page" do
   let!(:restaurant) { FactoryGirl.create(:restaurant) }
-  let!(:user) {FactoryGirl.create(:user) }
-  let!(:burger) { FactoryGirl.create(:burger, restaurant: restaurant) }
-  let!(:review1) {FactoryGirl.create(:review, burger: burger, user: user) }
+  let!(:review_owner) {FactoryGirl.create(:user) }
+  let!(:burger_owner) {FactoryGirl.create(:user, email: '925guys@gmail.com') }
+  let!(:burger) { FactoryGirl.create(:burger, restaurant: restaurant, user: burger_owner) }
+  let!(:review1) {FactoryGirl.create(:review, burger: burger, user: review_owner) }
 
   feature "User visits the review page" do
     scenario "Logged in user sees a form to enter review information" do
-      login_as(user, :scope => :user)
+      login_as(review_owner, :scope => :user)
       visit new_burger_review_path(burger)
 
       expect(page).to have_content "Add a new review"
@@ -23,22 +24,19 @@ feature "User visits the new review page" do
 
   feature "User submits a review" do
     scenario "User successfully submits a review" do
-      login_as(user, :scope => :user)
+      login_as(review_owner, :scope => :user)
       visit new_burger_review_path(burger)
-
       fill_in "Rating", with: "5"
       fill_in 'Body', with: "This burger.. its so good. i eat a lot"
       click_button 'Submit Review'
-
       expect(page).to have_content "Review submitted successfully"
       expect(page).to have_current_path(burger_reviews_path(burger))
-      # save_and_open_page
       expect(page).to have_content "This burger.. its so good. i eat a lot"
     end
 
     feature "User unsuccessfully submits a review" do
       scenario "User does not provide enough information" do
-        login_as(user, :scope => :user)
+        login_as(review_owner, :scope => :user)
         visit new_burger_review_path(burger)
         click_button 'Submit Review'
 
@@ -49,7 +47,7 @@ feature "User visits the new review page" do
       end
 
       scenario "User provides invalid information" do
-        login_as(user, :scope => :user)
+        login_as(review_owner, :scope => :user)
         visit new_burger_review_path(burger)
 
         fill_in "Rating", with: "6"

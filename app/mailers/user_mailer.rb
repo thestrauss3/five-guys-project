@@ -16,7 +16,6 @@ class UserMailer < ApplicationMailer
     @user = user
     @burger = burger
     @review = review
-
     mail to: user.email, subject: "A review has been added to your burger"
   end
 end
