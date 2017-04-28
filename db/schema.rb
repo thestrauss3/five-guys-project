@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170427180108) do
     t.datetime "updated_at",                 null: false
     t.integer  "restaurant_id"
     t.integer  "user_id"
-    t.integer  "average_rating", default: 0
+    t.integer  "average_rating", default: 0.0
   end
 
   create_table "restaurants", force: :cascade do |t|

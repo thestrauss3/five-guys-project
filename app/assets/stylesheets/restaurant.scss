@@ -4,7 +4,7 @@ $primary-black: #0A0310;
 $primary-yellow: #F9BA15;
 $primary-red: #FF0000;
 $primary-grey: #848484;
-@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Artifika');
 
 body {
   background-blend-mode: screen;
@@ -34,11 +34,11 @@ a:hover {
 }
 
 #title {
-  font-family: 'Righteous', cursive;
+  font-family: 'Artifika', serif;
   color: $primary-black;
   font-size: 80px;
   text-align: center;
-  // text-shadow: 4px 4px 2px $primary-grey;
+  text-shadow: 4px 4px 2px $primary-grey;
 }
 
 .main {
@@ -72,8 +72,7 @@ a:hover {
   margin-top: 25px;
 }
 
-.resta-items {
-  margin-left: 60px;
+ul.resta-items {
 }
 
 .restaurant-list{
