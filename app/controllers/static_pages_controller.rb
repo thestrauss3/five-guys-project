@@ -18,7 +18,8 @@ class StaticPagesController < ApplicationController
       @random_burgers = remaining_burgers.shuffle[0..2]
     else
       restaurant=FactoryGirl.create(:restaurant)
-      test_burger=FactoryGirl.create(:burger, restaurant: restaurant)
+      user=FactoryGirl.create(:user, email: "shmugenahmugenah@gmail.com")
+      test_burger=FactoryGirl.create(:burger, restaurant: restaurant, user: user)
       @top_three_burgers = [test_burger, test_burger, test_burger]
       @random_burgers = [test_burger, test_burger, test_burger]
     end
