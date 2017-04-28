@@ -40,7 +40,7 @@ class BurgerIndex extends Component {
         burgers = this.state.burgers.map(burger => {
           return(
             <h4>
-              <li className="burgerlist"><a href={`/burgers/` + burger.id}>{burger.name}</a></li>
+              <li><a href={`/burgers/` + burger.id}>{burger.name}</a></li>
             </h4>
           )
         })

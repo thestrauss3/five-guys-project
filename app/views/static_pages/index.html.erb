@@ -10,7 +10,7 @@
       <a href='<%="burgers/#{burger.id}"%>'>
         <%= image_tag burger.image_url, size:"250x250" %>
       </a>
-      Average Rating: <%= burger.average_rating %>
+      Average Rating: <%= burger.average_rating.to_f %>/5
     </div>
     <% end %>
   </div>
@@ -27,6 +27,7 @@
       <a href='<%="burgers/#{burger.id}"%>'>
         <%= image_tag burger.image_url, size:"250x250" %>
       </a>
+      Average Rating: <%= burger.average_rating.to_f %>/5
     </div>
     <% end %>
   </div>

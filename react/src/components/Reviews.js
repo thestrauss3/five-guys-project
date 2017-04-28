@@ -49,9 +49,9 @@ class Reviews extends Component {
           <button className="downvote" onClick={this.onClickDownVote} >▼</button></center>
         </div>
         <div className="rating columns small-9">
-          <h2>{this.props.body}</h2>
+          <h3>{this.props.body}</h3>
           <p>Rating: {this.props.burgerRating}/5</p>
-          <hr/>
+          <br/><hr/>
         </div>
       </div>
     )

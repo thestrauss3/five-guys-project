@@ -27,6 +27,19 @@
   color: $primary-red;
 }
 
+.title {
+  margin-top: 25px;
+}
+
+.radio-buttons {
+  border-right: 1px dashed $primary-green;
+  padding-right: 10px;
+}
+
+.radio-buttons:last-child {
+  padding-right: 10px;
+}
+
 .hidden {
   display:none
 }
