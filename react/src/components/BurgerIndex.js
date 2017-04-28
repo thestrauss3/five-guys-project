@@ -28,16 +28,18 @@ class BurgerIndex extends Component {
       .then(response => response.json())
       .then(body => {
         this.setState({
-          burgers: body
+          burgersFirstHalf: body.burgersFirstHalf,
+          burgersSecondHalf: body.burgersSecondHalf
         });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
-      let burgers;
-      if (this.state.burgers) {
-        burgers = this.state.burgers.map(burger => {
+
+      let burgersFirstHalf;
+      if (this.state.burgersFirstHalf) {
+        burgersFirstHalf = this.state.burgersFirstHalf.map(burger => {
           return(
             <h4>
               <li className="burgerlist"><a href={`/burgers/` + burger.id}>{burger.name}</a></li>
@@ -45,10 +47,29 @@ class BurgerIndex extends Component {
           )
         })
       }
+
+      let burgersSecondHalf;
+      if (this.state.burgersSecondHalf) {
+        burgersSecondHalf = this.state.burgersSecondHalf.map(burger => {
+          return(
+            <h4>
+              <li className="burgerlist"><a href={`/burgers/` + burger.id}>{burger.name}</a></li>
+            </h4>
+          )
+        })
+      }
+
       return (
-        <div className='burger-react'>
+        <div className="text-center burger-react">
          <h1>All Burgers:</h1>
-         {burgers}
+         <div className="rows text-center">
+            <div className="small-6 columns">
+              {burgersFirstHalf}
+            </div>
+            <div className="small-6 columns">
+              {burgersSecondHalf}
+            </div>
+          </div>
         </div>
       )
     }
