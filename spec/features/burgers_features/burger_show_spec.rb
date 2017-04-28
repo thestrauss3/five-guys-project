@@ -4,14 +4,17 @@ feature "User views information about a specific burger" do
   let(:user2) { FactoryGirl.create(:user, username: "Kenny", email: "bigmac@gmail.com") }
   let!(:restaurant1) { FactoryGirl.create(:restaurant) }
   let!(:restaurant2) { FactoryGirl.create(:restaurant) }
+  let!(:burger1_owner) {FactoryGirl.create(:user) }
+  let!(:burger2_owner) {FactoryGirl.create(:user, email: '925guys@gmail.com') }
   let!(:burger1) do
     FactoryGirl.create(:burger,
       restaurant: restaurant1,
       image_url: nil,
-      name: "Just another burger")
+      name: "Just another burger",
+      user: burger1_owner)
   end
   let!(:burger2) do
-    FactoryGirl.create(:burger, restaurant: restaurant2)
+    FactoryGirl.create(:burger, restaurant: restaurant2, user: burger2_owner)
   end
   let!(:review_with_high_vote) do
     FactoryGirl.create(:review,

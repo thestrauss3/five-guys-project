@@ -4,8 +4,11 @@ feature "User visits the review index page" do
   let!(:restaurant) do
     FactoryGirl.create(:restaurant, dining_type: "Slow", hours: "closed")
   end
+  let!(:burger_owner) {FactoryGirl.create(:user, email: '925guys@gmail.com') }
   let!(:burger) do
-    FactoryGirl.create(:burger, restaurant: restaurant)
+    FactoryGirl.create(:burger,
+      restaurant: restaurant,
+      user: burger_owner)
   end
   let!(:first_review) do
     FactoryGirl.create(:review,

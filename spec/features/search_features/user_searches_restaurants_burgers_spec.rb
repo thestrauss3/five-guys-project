@@ -4,9 +4,30 @@ feature "User wants to search for a restaurant or burger" do
   let!(:restaurant1) { FactoryGirl.create(:restaurant, name: "Mc Donalds") }
   let!(:restaurant2) { FactoryGirl.create(:restaurant, name: "Five Guys") }
   let!(:restaurant3) { FactoryGirl.create(:restaurant, name: "Burger King") }
-  let!(:burger1) { FactoryGirl.create(:burger, name: "Big Mac", restaurant: restaurant1) }
-  let!(:burger2) { FactoryGirl.create(:burger, name: "Whopper", restaurant: restaurant1) }
-  let!(:burger3) { FactoryGirl.create(:burger, name: "Cheese Burger", restaurant: restaurant1) }
+  let!(:burger1_owner) {FactoryGirl.create(:user) }
+  let!(:burger2_owner) {FactoryGirl.create(:user, email: '925guys@gmail.com') }
+  let!(:burger3_owner) {FactoryGirl.create(:user, email: '9to5guys@gmail.com') }
+  let!(:burger1) do
+    FactoryGirl.create(:burger,
+      name: "Big Mac",
+      restaurant: restaurant1,
+      user: burger1_owner
+    )
+  end
+  let!(:burger2) do
+    FactoryGirl.create(:burger,
+      name: "Whopper",
+      restaurant: restaurant1,
+      user: burger2_owner
+    )
+  end
+  let!(:burger3) do
+    FactoryGirl.create(:burger,
+      name: "Cheese Burger",
+      restaurant: restaurant1,
+      user: burger3_owner
+    )
+  end
 
 
   scenario "User searches for specific burger" do

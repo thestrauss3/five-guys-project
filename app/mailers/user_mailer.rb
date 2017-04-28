@@ -5,18 +5,17 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.signup_confirmation.subject
   #
-  def signup_confirmation(user = User.all.sample)
+  def signup_confirmation(user)
     @user = user
     if @user.persisted?
       mail to: user.email, subject: "Sign Up Confirmation"
     end
   end
 
-  def review_added(user = User.all.sample, burger = Burger.all.sample, review = burger.reviews.sample)
+  def review_added(user, burger, review)
     @user = user
     @burger = burger
     @review = review
-
     mail to: user.email, subject: "A review has been added to your burger"
   end
 end
