@@ -1,4 +1,4 @@
-<h2 class="title">Review for <%= @burger.name %></h2>
+<h2 class="title">Review for <%=link_to @burger.name, burger_path(@burger), class:"burger-title" %></h2>
 <div id="votes">
 </div>
 <div class="hidden">

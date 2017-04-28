@@ -1,0 +1,19 @@
+mike - email
+omar- admin/user --> what they can and cannot do when logged in/ not logged in
+nelson - search bar
+
+still need to cover
+restaurants - burgers - sam
+home page - reload random burgers
+
+
+-missing some admin functions-
+
+
+-fix review being shown --will be fixed at a later date
+
+
+====
+plan out click through
+
+plan out what we will say

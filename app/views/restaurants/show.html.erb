@@ -1,12 +1,10 @@
 <center><h1><%= @restaurant.name %></h1>
 <h3><%= @restaurant.description %></h3>
-</center>
-  <ul style="width: 10%; margin-left: auto; margin-right: auto;">
-    <li><%= @restaurant.dining_type %></li>
-    <li><%= @restaurant.hours %></li>
-    <li><%= @restaurant.location %></li>
-  </ul>
-  <center>
+    <ul>
+        <li><%= @restaurant.dining_type %></li>
+        <li><%= @restaurant.hours %></li>
+        <li><%= @restaurant.location %></li>
+    </ul>
 <h3>Burgers available at <%= @restaurant.name %></h3>
   <ul>
   <% @restaurant.burgers.each do |b| %>

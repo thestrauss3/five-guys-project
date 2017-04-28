@@ -21,7 +21,12 @@ class RestaurantsController < ApplicationController
   end
 
   def new
-    @restaurant = Restaurant.new
+    if current_user.present?
+      @restaurant = Restaurant.new
+    else
+      flash[:error] = "Please log in before trying to submit a restaurant!"
+      redirect_to new_user_session_path
+    end
   end
 
   def create
