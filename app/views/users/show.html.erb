@@ -1,6 +1,5 @@
 <center>
 <h1>Hi there <%= @user.username %>! </h1>
-<img><%= image_tag("fallback/default.jpg", size: "75x75", class: 'avatar_icon') %></img>
 <p><%= link_to "Add a profile picture!", edit_user_avatar_path(@user) %></p><hr/>
 
 <div class = "burger_submit">

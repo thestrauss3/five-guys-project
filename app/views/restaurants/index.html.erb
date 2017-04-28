@@ -1,9 +1,20 @@
-<center><h1>Restaurant List</h1>
-  <% @restaurants.each do |restaurant| %>
-    <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
-  <% end %>
+<center><h1>Restaurant List</h1></center>
 
-<hr/><h3>Restaurant not on our list? Add one to the list!</h3>
-<%= link_to "Add a Restaurant", new_restaurant_path%><br/>
-<%= link_to "Back to Home", root_path %>
+<div>
+  <% @table_of_restaurants.each do |row_of_restaurants| %>
+  <div class="row text-center">
+    <% row_of_restaurants.each do |restaurant| %>
+    <div class="small-4 columns restaurant-list">
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    </div>
+    <% end %>
+  </div>
+
+  <% end %>
+</div>
+<hr/>
+<center>
+  <h3>Restaurant not on our list? Add one to the list!</h3>
+  <%= link_to "Add a Restaurant", new_restaurant_path%><br/>
+  <%= link_to "Back to Home", root_path %>
 </center>
