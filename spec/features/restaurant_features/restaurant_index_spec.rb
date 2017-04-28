@@ -7,8 +7,18 @@ feature "User visits restaurant index page" do
       name: "Wendy's",
       description: "Home of the awesome baconator!")
   end
-  let!(:burger1) { FactoryGirl.create(:burger, restaurant: restaurant1) }
-  let!(:burger2) { FactoryGirl.create(:burger, restaurant: restaurant2) }
+  let!(:burger1_owner) {FactoryGirl.create(:user) }
+  let!(:burger2_owner) {FactoryGirl.create(:user, email: '925guys@gmail.com') }
+  let!(:burger1) do
+    FactoryGirl.create(:burger,
+      restaurant: restaurant1,
+      user: burger1_owner)
+  end
+  let!(:burger2) do
+    FactoryGirl.create(:burger,
+      restaurant: restaurant2,
+      user: burger2_owner)
+  end
 
   scenario "User sees a list of all restaurants" do
     visit restaurants_path
