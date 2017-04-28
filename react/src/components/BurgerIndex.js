@@ -60,7 +60,7 @@ class BurgerIndex extends Component {
       }
 
       return (
-        <div className="text-center burger-react">
+        <div className="text-center burger-react" id="main">
          <h1>All Burgers:</h1>
          <div className="rows text-center">
             <div className="small-6 columns">
