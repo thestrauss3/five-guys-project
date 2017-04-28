@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :burgers
   has_many :reviews
   has_many :uservotes
-  
+
 
   # testing CarrierWave
   mount_uploader :avatar, AvatarUploader
@@ -16,5 +16,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  after_create :send_confirmation
 
+  def send_confirmation
+    UserMailer.signup_confirmation(self).deliver
+  end
 end
