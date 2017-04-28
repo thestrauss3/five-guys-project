@@ -9,9 +9,10 @@
     <div class='last-user'>
       <p><%= @burger.reviews.order(:review_rating).last.body %></p>
       <p>Written by user: <%= @burger.reviews.order(:review_rating).last.user.username%></p>
-      <%= link_to "See all reviews for this burger", burger_reviews_path(@burger) %><br/>
-      <%= link_to "Add a Review for this burger", new_burger_review_path(@burger) %>
-    </div><% end %><hr/></center>
+    <% end %>
+    <%= link_to "See all reviews for this burger", burger_reviews_path(@burger) %><br/>
+    <%= link_to "Add a Review for this burger", new_burger_review_path(@burger) %>
+    </div><hr/></center>
 
 <div>
   <% if current_user.present? %>
