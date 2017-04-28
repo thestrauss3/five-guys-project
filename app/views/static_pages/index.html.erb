@@ -8,7 +8,7 @@
     <div class="small-4 columns">
       <p><%= link_to burger.name, burger_path(burger) %></p>
       <%= image_tag burger.image_url, size:"250x250", class: "img-burg" %>
-      Average Rating: <%= burger.average_rating %>
+      Average Rating: <%= burger.average_rating.to_f %>/5
     </div>
     <% end %>
   </div>
@@ -23,6 +23,7 @@
     <div class="small-4 columns">
       <p><%= link_to burger.name, burger_path(burger) %></p>
       <%= image_tag burger.image_url, size:"250x250", class: "img-burg" %>
+      Average Rating: <%= burger.average_rating.to_f %>/5
     </div>
     <% end %>
   </div>

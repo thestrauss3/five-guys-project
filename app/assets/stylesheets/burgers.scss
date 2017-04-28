@@ -7,6 +7,7 @@ $primary-yellow: #F9BA15;
   max-width: 200px;
   max-height: 200px;
 }
+
 .title {
   text-align: center;
   padding-bottom: 30px;
@@ -32,4 +33,14 @@ li {
 
 .burger-react {
   text-align: center;
+}
+
+.burger-info {
+  margin: 30px 0px;
+  font-family: "Rightous";
+  font-style: italic;
+}
+
+.burger-description {
+  margin-bottom: 30px;
 }

@@ -10,8 +10,17 @@
 
 <%= form_for [@burger, @review] do |f| %>
   <div class="field">
-    <%= f.label :burger_rating, "Rating" %><br/>
-    <%= f.number_field :burger_rating %>
+    <%= f.label :burger_rating, "Rating" %>
+      <%= f.radio_button :burger_rating, "5", :checked => true %>
+      <%= f.label :burger_rating, "5", class: "radio-buttons" %>
+      <%= f.radio_button :burger_rating, "4" %>
+      <%= f.label :burger_rating, "4", class: "radio-buttons" %>
+      <%= f.radio_button :burger_rating, "3" %>
+      <%= f.label :burger_rating, "3", class: "radio-buttons" %>
+      <%= f.radio_button :burger_rating, "2" %>
+      <%= f.label :burger_rating, "2", class: "radio-buttons" %>
+      <%= f.radio_button :burger_rating, "1" %>
+      <%= f.label :burger_rating, "1" %>
   </div>
 
   <div class="field">
