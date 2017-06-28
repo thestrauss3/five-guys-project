@@ -5,7 +5,7 @@
 ![Coverage Status](https://coveralls.io/repos/thestrauss3/five-guys-project/badge.png)
 
 ------
-ninetofiveguys.herokuapp.com/
+https://ninetofiveguys.herokuapp.com/
 ------
 
 Nine to Five Guys is a review site whose purpose is to settle the age old question of "Where can I find a great burger?". Users can submit burgers into our database and provide reviews and ratings for them.
